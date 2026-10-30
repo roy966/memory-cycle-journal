@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Fri Oct 30, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Friday, October 30, 2026</span><span>Vol. I · No. 24 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of ~08:55 IST · US: Thursday closes · Korea/Tokyo: Friday closes (15:30 KST/JST)</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-10-30.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>SOX (Thu close)</b><span class="big">11,518.20</span>−1.42% · MU $934.27 (−4.98%) · KOSPI (Fri close) 5,730.74 (−3.48%) · SK hynix ₩1,418,000 (−7.08%) · Samsung ₩225,000 (−3.02%)</div>
+    <div><b>DDR5 16Gb SPOT (THU)</b><span class="big">$61.33</span>flat · TrendForce 2026-10-29 close · DDR4 16Gb $82.92 (flat) · NAND 512Gb TLC wafer $16.88 (no new weekly print)</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Earnings · Sandisk</div>
+  <h1 class="lead"><a href="https://investor.sandisk.com/news-releases/news-release-details/sandisk-reports-fiscal-first-quarter-2027-financial-results" target="_blank" rel="noopener">Sandisk Beats and Guides Higher, but Growth Now Comes More From Volume Than Price</a></h1>
+  <p class="deck">Data-center revenue jumped 61% in a quarter and half of next year’s bits are already under long-term deals. Price rises were smaller than investors hoped, the shares fell after hours, and Korean and Japanese memory stocks sold off on Friday.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~08:55 IST Friday (UTC+2) · US closes from Thursday · Korea/Japan Friday closes · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · US Thursday closes, Korea/Japan Friday closes</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Memory</td></tr>
+        <tr><td>Micron (Thu)</td><td class="n">$934.27 (−4.98%)</td></tr>
+        <tr><td>Sandisk / WDC / Seagate (Thu)</td><td class="n">−5.32% / −0.25% / +0.36%</td></tr>
+        <tr><td>SK hynix (Fri close)</td><td class="n">₩1,418,000 (−7.08%)</td></tr>
+        <tr><td>Samsung (Fri close)</td><td class="n">₩225,000 (−3.02%)</td></tr>
+        <tr><td>Kioxia (Fri close)</td><td class="n">¥13,470 (−7.14%)</td></tr>
+        <tr><td>Won per dollar</td><td class="n">₩1,335.0</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">Sandisk fiscal Q1 and others</td></tr>
+        <tr><td>Revenue / estimate</td><td class="n">$11.03B / $10.64B</td></tr>
+        <tr><td>Adj. gross margin / adj. EPS</td><td class="n">85.1% / $49.51</td></tr>
+        <tr><td>Data center / Edge / Consumer</td><td class="n">+61% / +7% / −29% q/q</td></tr>
+        <tr><td>Q2 guide (rev / EPS, pre-split)</td><td class="n">$12.2–12.6B / $55–57</td></tr>
+        <tr><td>Intel Q4 revenue guide</td><td class="n">$15–16B</td></tr>
+        <tr><td>US 10-year / WTI</td><td class="n">4.989% / $103.38</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: Sandisk beat on every line, but memory shares fell anyway. Micron and Sandisk dropped Thursday as Alphabet’s spending scare spread, and Korea and Japan followed on Friday after Intel and Amazon fell after hours. Estimates are those cited by Wall St Engine on X. Korean and Japanese prices are Friday closes (15:30 local, 08:30 IST). Sources: Sandisk, Intel, Reuters, CNBC, Yahoo Finance.</div>
+  </aside>
+
+  <p>Sandisk’s fiscal first-quarter revenue was $11.03 billion, up 23% from the prior quarter and above the $10.64 billion estimate. Adjusted gross margin was 85.1% and adjusted EPS $49.51 against $46.22 expected (company release; estimates cited by Wall St Engine). Data-center revenue rose 61% to $4.80 billion, Edge (PCs and phones) rose 7% to $5.83 billion and Consumer fell 29% to $397 million. Sandisk guided the December quarter to $12.2–12.6 billion of revenue, an 84.5–85.5% margin and $55–57 of EPS before an 8-for-1 split. The split takes effect after the close on Nov. 19, and the shares trade on a split-adjusted basis from Nov. 20. It also bought back $5.0 billion of stock in the quarter.</p>
+  <p>The catch was the mix. On the call, management said about 60% of revenue growth came from volume and 40% from price. It expects “modest” price increases through the year (Benzinga transcript). Sandisk says about half of fiscal 2027 bits and about two-thirds of fiscal 2028 bits are under long-term deals. Its deal pipeline exceeds supply “through the end of the decade”, and 95% of those deals are with investment-grade customers. It sees data-center NAND bit demand growing about 40% in 2027, to more than 55% of the market. Jefferies (Buy) said slower pricing and softer Edge and Consumer sales “elevate concerns that supply is starting to catch up”. Goldman (Buy) pointed to “very limited supply additions”. The stock had already fallen 5.3% on Thursday and lost more after hours.</p>
+  <p><b>Our call:</b> unchanged overall; enterprise NAND and AI demand still tight, but price momentum is slowing and PC demand is cracking. <span class="tag inv">Cycle signal: price growth slows</span></p>
+
+  <article class="story">
+    <div class="kicker">Demand · PCs</div>
+    <h2><a href="https://www.investing.com/news/stock-market-news/intel-signals-slower-growth-as-pc-market-remains-under-pressure-4984967" target="_blank" rel="noopener">Intel Says Memory Prices Are Shrinking the PC Market, and Guides Below Forecasts</a></h2>
+    <p>Intel guided fourth-quarter revenue to $15–16 billion and adjusted EPS to $0.25, both below estimates, and the shares fell about 20% after hours (Reuters, CNBC). It expects PC-chip revenue to fall by a mid-20s percentage. It sees the PC market shrinking about 12% in units in 2026 and about 10% in 2027, as higher memory prices and shortages raise system costs. Cantor’s math implies PC units down 45% from a year earlier in the fourth quarter. BluBird also notes a roughly two-week shutdown at Intel’s Kiryat Gat fab. This is the demand destruction the cycle tops have shown before: high prices start to cut volumes at the consumer end. <span class="tag inv">Demand · PC units falling</span></p>
+  </article>
+  <article class="story">
+    <div class="kicker">Demand · Hyperscalers</div>
+    <h2><a href="https://www.cnbc.com/2026/10/29/amazon-amzn-q3-earnings-report-2026.html" target="_blank" rel="noopener">Amazon Says 2027 Spending Will Be “Meaningfully” Higher as AWS Growth Hits 39%</a></h2>
+    <p>AWS revenue rose 39.3% to $46.0 billion, its fastest growth in nearly five years. Amazon kept 2026 capex at about $220 billion and said 2027 will be “meaningfully more” (company release, CNBC). The shares had already fallen 4.3% on Thursday and dropped further after hours as spending outran even the faster cloud growth. A bigger 2027 budget supports AI memory demand, even as investors sell the spenders. <span class="tag inv">AI demand · intact</span></p>
+  </article>
+  <article class="story">
+    <div class="kicker">Supply · NAND</div>
+    <h2><a href="https://www.sec.gov/Archives/edgar/data/2120882/000119312526436872/d183583d6k.htm" target="_blank" rel="noopener">SK Hynix Says No Decision on a U.S. NAND Fab After Report of a ₩60 Trillion Plan</a></h2>
+    <p>Korea’s Maeil Business Newspaper reported that Solidigm, SK hynix’s U.S. unit, is pursuing about ₩60 trillion for a new NAND fab in the United States. In an SEC filing, SK hynix said Solidigm is “reviewing various measures” to expand capacity but “no matters have been determined”. It will update within a month. Some headlines overnight said SK hynix “will construct” the plant; the company has not confirmed that. Separately, OpenAI’s Sam Altman said memory makers could each make about $100 billion a year of free cash flow but hesitate to build fabs, and that “the invisible hand is failing” (TNW). Both point the same way: buyers are pushing for more supply. <span class="tag">Unconfirmed plan</span> <span class="tag inv">2028+ supply risk</span></p>
+  </article>
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Oct 29, 08:15 IST</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Brokers stay with Sandisk.</b> Cantor (Overweight, target $2,200): CY27/28 EPS $270/$375 and an 80% gross-margin floor. Jefferies (Buy, $1,750) flags moderating prices. Goldman (Buy): “very limited supply additions”. <span class="src">Cantor, Jefferies, Goldman via semis digest</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Intel: “memory constraints weigh materially on PC trends.”</b> Cantor (Neutral, $90) sees PC industry units down 10% in 2027. Intel says the industry is supply-constrained through 2027 into 2028. <span class="src">Cantor via semis digest</span></div>
+  <div class="brief"><b class="h">From Thursday’s digest.</b> Cantor on Samsung: 2027 capex up, but mostly cleanroom shells and higher costs, so no meaningful bit growth in 2028; HBM4 about 60% of Samsung HBM sales. Counterpoint HBM share Q1→Q2: SK hynix 58→50%, Samsung 21→33%, Micron 21→18%. WSJ via Jefferies: Apple to spend $25B on flash this year vs $6B in 2025. <span class="src">Pre-market digest</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since last edition · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@pequityresearch</span> · Oct 29 22:54<br>Sandisk call: customers “have underestimated the amount of NAND they need”; several are coming back for a second round.<a class="src" href="https://x.com/pequityresearch/status/2115910085914382455">x.com/…/2115910085914382455</a></li>
+    <li><span class="handle">@wallstengine</span> · Oct 29 23:01<br>Sandisk sees data centers above 55% of NAND bit demand in 2027 with DC bits up ~40%.<a class="src" href="https://x.com/wallstengine/status/2115912039436808336">x.com/…/2115912039436808336</a></li>
+    <li><span class="handle">@jukan05</span> · Oct 30 00:42 <span class="tag">Opinion</span><br>Intel “badly underestimated how quickly higher memory prices would hit PC demand and trigger an inventory correction.”<a class="src" href="https://x.com/jukan05/status/2115937362488471561">x.com/…/2115937362488471561</a></li>
+    <li><span class="handle">@FirstSquawk</span> · Oct 30 02:28 <span class="tag">Unconfirmed</span><br>Headline: SK hynix to construct a U.S. NAND facility for AI data centers. The company’s filing says nothing is decided.<a class="src" href="https://x.com/FirstSquawk/status/2115964067110322545">x.com/…/2115964067110322545</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Unchanged: enterprise demand tight, price momentum slowing</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Oct 29 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>Sandisk growth 60% volume / 40% price, “modest” increases ahead; DRAM spot flat; TrendForce Q4 DRAM ~+20%, NAND +15–20% unchanged</td><td class="n">Up, slowing more</td></tr>
+    <tr><td><b>LTAs / lead times</b></td><td>Sandisk ~½ of FY27 and ~⅔ of FY28 bits committed, pipeline above supply to 2030</td><td class="n">Long, steady</td></tr>
+    <tr><td><b>Guide vs consensus</b></td><td>Sandisk guided above ($12.4B mid vs $12.2B); Intel well below on PCs</td><td class="n">Memory green</td></tr>
+    <tr><td><b>Capex / new supply</b></td><td>Solidigm U.S. NAND fab under review (₩60T report, not decided); Sandisk bits mid/high-teens, no fab change; Altman urges more fabs</td><td class="n">Pressure to add</td></tr>
+    <tr><td><b>Demand / de-spec</b></td><td>Intel: PC units −12% in 2026, −10% in 2027 on memory costs; Amazon 2027 capex “meaningfully more”; DC NAND bits +40% in 2027</td><td class="n">AI up, PCs down</td></tr>
+  </table>
+  </div>
+  <p class="src">How to read this: the playbook says price growth slowing and higher next-year capex are the tells near tops, while upbeat guidance says little. Both moved a little today; AI demand and long-term deals did not.</p>
+  <div class="verdict"><b>Verdict vs previous call (No. 23, Oct 29)</b><br>Late upcycle; tight through 2027 and booked into 2028. Unchanged overall, a touch looser at the edges: Sandisk’s price growth was smaller than hoped (volume-led, “modest” increases ahead), Intel says memory costs are shrinking the PC market, and buyers are pushing for new fabs (Solidigm review, Altman). Holding it: Sandisk beat and raised, half of 2027 bits are under contract, and data-center bit demand grows ~40% in 2027. Kioxia reports at 11:45 IST today.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Oct 30–Nov 12 · Israel time (IST, UTC+2)</span></div>
+  <table class="ev">
+    <tr><td class="dt">Fri 30</td><td>Tokyo Electron, MediaTek results · Kioxia FY26 Q2 11:45 (forecast: ¥2.39T sales, ¥1.89T op. profit) · CXMT full Q3 by Oct 31</td><td class="st">NAND · tools</td></tr>
+    <tr><td class="dt">Sun Nov 1</td><td>Korea October exports (~02:00) · US clocks go back</td><td class="st">Trade</td></tr>
+    <tr><td class="dt">Mon–Tue Nov 2–3</td><td>Apple FQ4 (00:00 Nov 3) · US midterms · AMD, Supermicro (00:00 Nov 4)</td><td class="st">Demand</td></tr>
+    <tr><td class="dt">Wed Nov 4</td><td>Qualcomm, Arm after the US close</td><td class="st">Phones</td></tr>
+    <tr><td class="dt">Fri Nov 6</td><td>US payrolls 15:30 · Micron Taoyuan union, third round (tentative)</td><td class="st">Labor</td></tr>
+    <tr><td class="dt">Mon Nov 9</td><td>Sandisk split record date (8-for-1; split-adjusted trading from Nov 20)</td><td class="st">NAND</td></tr>
+    <tr><td class="dt">Tue Nov 10</td><td>TSMC and Taiwan October sales · US CPI 15:30 · CoreWeave</td><td class="st">AI</td></tr>
+  </table>
+  <p class="src">What this shows: dated events that could move the call. Kioxia today is the second NAND test after Sandisk; Korea’s exports Sunday give the first October memory-price read.</p>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://investor.sandisk.com/news-releases/news-release-details/sandisk-reports-fiscal-first-quarter-2027-financial-results" target="_blank" rel="noopener">Sandisk: Fiscal First Quarter 2027 results</a></li><li><a href="https://www.benzinga.com/news/26/10/62724272/sandisk-q1-2027-earnings-call-transcript" target="_blank" rel="noopener">Benzinga: Sandisk Q1 2027 earnings call transcript</a></li><li><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-sandisk-beats-q1-2027-estimates-shares-fall-93CH-4985403" target="_blank" rel="noopener">Investing.com: Sandisk earnings call transcript</a></li><li><a href="https://www.investors.com/news/technology/sandisk-stock-sndk-fiscal-q1-2027-earnings/" target="_blank" rel="noopener">IBD: Sandisk fiscal Q1 2027 earnings</a></li><li><a href="https://www.investing.com/news/stock-market-news/intel-signals-slower-growth-as-pc-market-remains-under-pressure-4984967" target="_blank" rel="noopener">Reuters via Investing.com: Intel signals slower growth as PC market remains under pressure</a></li><li><a href="https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html" target="_blank" rel="noopener">CNBC: Intel Q3 2026 earnings</a></li><li><a href="https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results" target="_blank" rel="noopener">Intel: Third-quarter 2026 results</a></li><li><a href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx" target="_blank" rel="noopener">Amazon: Third Quarter results</a></li><li><a href="https://www.cnbc.com/2026/10/29/amazon-amzn-q3-earnings-report-2026.html" target="_blank" rel="noopener">CNBC: Amazon Q3 2026 earnings</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/2120882/000119312526436872/d183583d6k.htm" target="_blank" rel="noopener">SK hynix 6-K (Solidigm U.S. NAND fab report)</a></li><li><a href="https://www.g-enews.com/article/Global-Biz/2026/10/202610300740564655fbbec65dfb_1" target="_blank" rel="noopener">g-enews: SK hynix U.S. NAND plan</a></li><li><a href="https://thenextweb.com/news/sam-altman-openai-robots-self-replicating-data-centres-cheeky-pint" target="_blank" rel="noopener">TNW: Sam Altman on memory makers and data centres</a></li><li><a href="https://en.sedaily.com/news/2026/10/30/sk-hynix-tumbles-7-percent-as-alphabet-sheds-500-billion-in" target="_blank" rel="noopener">Seoul Economic Daily: SK hynix tumbles 7%</a></li><li><a href="https://www.cnbc.com/2026/10/30/boj-inflation-target-rates.html" target="_blank" rel="noopener">CNBC: BoJ holds, says inflation target met</a></li><li><a href="https://en.edaily.co.kr/news/eda202610305200/" target="_blank" rel="noopener">Edaily: Kioxia shares ahead of results</a></li><li><a href="https://www.trendforce.com/price/dram/dram_spot" target="_blank" rel="noopener">TrendForce DRAM spot prices</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #24 · Oct 30, 2026</span></div>
+</body>
+</html>

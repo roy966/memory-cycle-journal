@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Sat Oct 10, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Saturday, October 10, 2026</span><span>Vol. I · No. 4 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of 08:30 IDT</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a><a href="#study">Study Corner</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-10-10.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>SAMSUNG 2027 SUPPLY UNDER LTA</b><span class="big">75–80%</span>Incl. HBM · per KED (industry sources) · Nvidia, Google, Microsoft named</div>
+    <div><b>MICRON, OCT 9 CLOSE</b><span class="big">$1,029.00</span>−0.66% · week of OpenAI scare · Range $1,017.00–$1,054.17</div>
+  </div>
+</header>
+
+<!-- ===== LEAD STORY ===== -->
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Contracts</div>
+  <h1 class="lead"><a href="https://www.kedglobal.com/korean-chipmakers/newsView/ked202610090002" target="_blank" rel="noopener">Samsung Signs Away Most of 2027 Before It Is Built</a></h1>
+  <p class="deck">Long-term deals now cover an estimated 75–80% of next year's memory output, as an Apple order cut shows where the price pass-through stops</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · Data as of 08:30 IDT</div>
+
+  <!-- ===== KEY NUMBERS BOX ===== -->
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · The Cycle in Numbers</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Contracts</td></tr>
+        <tr><td>Samsung 2027 output under LTA (KED)</td><td class="n">~75–80%</td></tr>
+        <tr><td>Samsung LTA target, Jul 30 call</td><td class="n">60–70% of capacity</td></tr>
+        <tr><td>Conv. DRAM contract 4Q (TrendForce)</td><td class="n">+10–15%</td></tr>
+        <tr><td>NAND contract 4Q (TrendForce)</td><td class="n">+15–20%</td></tr>
+        <tr class="sec"><td colspan="2">Spot (last print, Oct 8 Asia close)</td></tr>
+        <tr><td>DDR5 16Gb</td><td class="n">$58.667 · ▲0.46%</td></tr>
+        <tr><td>DDR4 8Gb 3200</td><td class="n">$46.400 · ▲0.09%</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">Demand signals</td></tr>
+        <tr><td>iPhone 18 Pro Oct component orders</td><td class="n">−15% to −20%</td></tr>
+        <tr><td>Nvidia off-B/S obligations (10-Q)</td><td class="n">$530B vs $184B</td></tr>
+        <tr><td>OpenAI net ARR, year-end target</td><td class="n">~$70B (Bloomberg)</td></tr>
+        <tr class="sec"><td colspan="2">Stock moves, Oct 9</td></tr>
+        <tr><td>Micron ($1,029.00)</td><td class="n">−0.66%</td></tr>
+        <tr><td>Korea / Taiwan</td><td class="n">closed</td></tr>
+      </table>
+    </div>
+    <div class="src">Sources: KED Global; Digital Today; TrendForce; @skylabintel / DRAMeXchange (spot); Nikkei Asia; SemiAnalysis; Bloomberg via digest; StockAnalysis (MU close).</div>
+  </aside>
+
+
+
+  <p>Samsung Electronics has secured long-term supply agreements covering about 75–80% of its planned memory production for next year, the Korea Economic Daily reported Friday, as Nvidia, Google and Microsoft seek to lock in supply for five years or more. SK hynix and Micron are also signing large long-term contracts, the report said. Samsung has not disclosed contract terms; the figure comes from industry sources.</p>
+  <p><b><a href="https://www.digitaltoday.co.kr/en/view/87299/samsung-memory-to-lock-in-future-results-with-contracts-not-market-cycle" target="_blank" rel="noopener">How the deals work.</a></b> On its July 30 call Samsung said it aimed to put 60–70% of capacity under multi-year contracts: a rolling five-year base renewed yearly, with deposit-like prepayments, about a quarter of which it had already received (Digital Today, TrendForce). It expects the shortage to deepen in 2027 and run into 2028, citing a 3.5-year lead time from new fab to wafers.</p>
+  <div class="pull">"Long-term agreements could leave manufacturers exposed when the cycle turns."<span class="src">— KED Global, deck of Oct 9 report</span></div>
+  <p><b>The tape.</b> Micron closed Friday at $1,029.00, −0.66%, after the 4.79% drop on Thursday's OpenAI report. Korea and Taiwan were shut for holidays. Bloomberg's report that OpenAI expects ~$70 billion net annualized revenue by year-end took some of the funding scare out.</p>
+  <p><b>Why it matters for the cycle.</b> Contracts with deposits turn a spot-driven business into a backlog. That lowers the odds of a 2027 price collapse. It does not fix the price: quarterly resets still reprice bits, and contract ceilings and floors decide who wears the next downturn.</p>
+  <p><b>Our call:</b> late upcycle, tight through 2027. Slightly tighter than Oct 9 on volume visibility; consumer demand is the soft spot.</p>
+
+  <article class="story">
+    <div class="kicker">Demand</div>
+    <figure><a href="https://www.macrumors.com/2026/10/09/apple-cuts-iphone-18-pro-orders-price-demand/" target="_blank" rel="noopener"><img src="https://images.macrumors.com/t/hWkOCOJk6oFLPItG9CEYY-k2KZk=/2500x/article-new/2026/09/iphone-18-pro-blue.jpeg" alt="iPhone 18 Pro (MacRumors image)" loading="lazy" referrerpolicy="no-referrer"></a><figcaption>Image: MacRumors</figcaption></figure><h2><a href="https://asia.nikkei.com/business/technology/exclusive-apple-cuts-iphone-18-pro-orders-due-to-soft-demand" target="_blank" rel="noopener">Apple Trims iPhone 18 Pro Orders as Memory Costs Bite</a></h2>
+    <p>Apple told some suppliers to cut October component orders for the iPhone 18 Pro and Pro Max by at least 15% vs its first request; one supplier said 15–20%, Nikkei Asia reported. The phones cost $100 more than last year's, a rise tied to memory costs. Chinese media later said Pro orders fell slightly while Pro Max rose slightly <span class="tag">Unconfirmed</span>.</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Nvidia</div>
+    <h2><a href="https://x.com/SemiAnalysis_/status/2108724444138983719" target="_blank" rel="noopener">Nvidia's Memory Bill Shows Up Off the Balance Sheet</a></h2>
+    <p>SemiAnalysis says Nvidia's latest 10-Q disclosed $530B of gross off-balance-sheet obligations across six line items, up from $184B a quarter earlier, mainly supply commitments, "primarily commitments to buy memory." The largest buyer is pre-committing, the same story as the LTAs. <span class="tag">Analyst view</span></p>
+  </article>
+</section>
+
+<!-- ===== FROM THE INBOX ===== -->
+<section id="inbox">
+  <div class="sec-h">From the Inbox</div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">2027 is mostly contracted.</b> The pre-market semis digest leads with the Korean report that Samsung has locked 75–80% of next year's memory supply, including HBM. Its read: volume risk for 2027 falls, but a Jefferies Asia note says Rubin Ultra's lower memory spec pulls 2027 blended HBM pricing to $25–26/GB vs $30–32 expected. <span class="src">Semis pre-market digest, Oct 9, 15:08 IDT</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">First sign of demand destruction.</b> Same digest on the Nikkei iPhone 18 Pro order cut: "the first clear sign that memory inflation is destroying consumer demand." Jefferies Asia says Apple has been more conservative on shipments since early September. <span class="src">Semis pre-market digest · Jefferies desk notes</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">OpenAI scare half-reversed.</b> Bloomberg reports OpenAI expects ~$70B net annualized revenue by year-end vs ~$50B in September. Jefferies' Chris Wood: the cycle ends when markets stop funding debt-financed capex, so watch AI credit spreads, not ARR. <span class="src">Digest · Jefferies Global Semis Daily, Oct 9</span></div>
+  <div class="brief"><b class="h">Also in the inbox.</b> Jefferies Blayne's Bytes (MRVL analyst day, OCP preview); Cantor Tech Daily on AI spec and OpenAI. No TrendForce, company IR or equipment-maker mail since the last edition. Personal inbox not scanned (connector needs re-authorization). <span class="src">Work inbox, Oct 9</span></div>
+</section>
+
+
+
+<!-- ===== ON X ===== -->
+<section id="x">
+  <div class="sec-h">On X <span>· Since last edition</span></div>
+  <ul class="x">
+    <li><span class="handle">@jukan05</span> <span class="tag">Unconfirmed</span><br>Korean media: <q>ASML has raised prices by 10% across all DUV and EUV replacement parts supplied to Samsung and SK hynix.</q><a class="src" href="https://x.com/jukan05/status/2108753810130903062">x.com/jukan05/status/2108753810130903062</a></li>
+    <li><span class="handle">@jukan05</span> <span class="tag">Unconfirmed</span><br><q>I'm hearing Apple still hasn't signed any long-term memory supply agreements.</q> Korean analysts reportedly see sharp DRAM and NAND hikes for Apple early next year.<a class="src" href="https://x.com/jukan05/status/2108696044280463478">x.com/jukan05/status/2108696044280463478</a></li>
+    <li><span class="handle">@SemiAnalysis_</span> <span class="tag">Analyst view</span><br>Nvidia's 10-Q: $530B of off-balance-sheet obligations, up from $184B, driven by supply commitments, <q>primarily commitments to buy memory</q>.<a class="src" href="https://x.com/SemiAnalysis_/status/2108724444138983719">x.com/SemiAnalysis_/status/2108724444138983719</a></li>
+    <li><span class="handle">@skylabintel</span><br>Kioxia to demo a GP-series SSD on 3rd-gen XL-FLASH at more than 20M 512-byte random-read IOPS, over 2x the GP1.<a class="src" href="https://x.com/skylabintel/status/2108634551706964166">x.com/skylabintel/status/2108634551706964166</a></li>
+    <li><span class="handle">@pequityresearch</span> <span class="tag">Unconfirmed</span><br>Relays Goldman: Samsung HBM revenue $81B in 2027 (+321% y/y). Note not seen.<a class="src" href="https://x.com/pequityresearch/status/2108738946993689022">x.com/pequityresearch/status/2108738946993689022</a></li>
+    <li><span class="handle">@SemiconductorsX</span> <span class="tag">Unconfirmed</span><br>Relays Goldman: Samsung OP ₩373.5T next year, <q>most of it is conventional DRAM, not HBM.</q><a class="src" href="https://x.com/SemiconductorsX/status/2108732456471781649">x.com/SemiconductorsX/status/2108732456471781649</a></li>
+  </ul>
+  <p class="src">All posts were opened through the X API and quoted as written. Relayed bank figures and media reports are claims, not confirmed facts.</p>
+</section>
+
+<!-- ===== CYCLE TRACKER ===== -->
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker</div>
+  <div class="keep">
+  <h3>Volume locked in; consumer demand cracks</h3>
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Oct 9</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Demand</b></td><td>Hyperscalers pre-commit (LTAs, Nvidia $530B); iPhone Pro cut; OpenAI ARR scare eases</td><td class="n">Mixed</td></tr>
+    <tr><td><b>Supply</b></td><td>Samsung 2027 ~75–80% contracted; ASML parts +10% <span class="tag">Unconfirmed</span></td><td class="n">Tighter</td></tr>
+    <tr><td><b>Inventory</b></td><td>No new data (~8 wks)</td><td class="n">Flat</td></tr>
+    <tr><td><b>Contract vs spot</b></td><td>No new spot print (Asia holidays)</td><td class="n">Flat</td></tr>
+    <tr><td><b>HBM pricing</b></td><td>Jefferies Asia: 2027 HBM $25–26/GB vs $30–32 expected</td><td class="n">Looser (price)</td></tr>
+    <tr><td><b>Valuation</b></td><td>MU flat-ish after Thursday's drop</td><td class="n">—</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict</b><br>Late upcycle; tight through 2027, unchanged. vs Oct 9: slightly tighter. Contracted 2027 volume and the OpenAI ARR rebound outweigh the iPhone order cut and softer 2027 HBM price talk. Price momentum is still slowing; 2028+ still looser as new fabs build.</div>
+</section>
+
+<!-- ===== EVENTS CALENDAR ===== -->
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Oct 10–29 · Times Israel (IDT)</span></div>
+  <table class="ev">
+    <tr><td class="dt">Sat 10</td><td>Taiwan September monthly-revenue deadline.</td><td class="st">calendar</td></tr>
+    <tr class="star"><td class="dt">Mon 12</td><td><b>Nanya 3Q call</b>. Korea Oct 1–10 exports. OCP Global Summit opens (to Oct 15).</td><td class="st">calendar</td></tr>
+    <tr><td class="dt">Mon 12–Thu 15</td><td>SEMICON West, San Francisco.</td><td class="st">confirmed</td></tr>
+    <tr class="star"><td class="dt">Wed 14 · 08:00</td><td><b>ASML Q3 results</b>. TrendForce weekly spot. US CPI 15:30.</td><td class="st">confirmed</td></tr>
+    <tr class="star"><td class="dt">Thu 15 · 09:00</td><td><b>TSMC 3Q26 results</b>: capex, CoWoS capacity.</td><td class="st">confirmed</td></tr>
+    <tr><td class="dt">Fri 16</td><td>Bank of Korea Sep export price index (DRAM).</td><td class="st">calendar</td></tr>
+    <tr><td class="dt">Thu 22 · 00:00</td><td><b>Lam Research Sep-qtr call</b>.</td><td class="st">Lam IR</td></tr>
+    <tr><td class="dt">~Tue 27</td><td>SK hynix 3Q results (not yet on IR).</td><td class="st">tentative</td></tr>
+    <tr><td class="dt">Wed 28 · 21:00</td><td>FOMC decision.</td><td class="st">confirmed</td></tr>
+    <tr class="star"><td class="dt">Thu 29</td><td><b>Samsung full 3Q results</b>: HBM, capex, LTA disclosure.</td><td class="st">Korea Times</td></tr>
+    <tr><td class="dt">Mon Nov 2</td><td>Apple Sep-qtr results.</td><td class="st">etf.net</td></tr>
+  </table>
+  <p class="src" style="margin-top:5pt">Sources: prior-edition calendar (ASML, TSMC, Lam IR; Korea Times); etf.net.</p>
+</section>
+
+<!-- ===== STUDY CORNER ===== -->
+<section id="study">
+  <div class="sec-h">Study Corner <span>· Day 5 of 14</span></div>
+  <div class="study">
+    <h3>Peak vs trough, part 2: the language of the turn</h3>
+    <p>Day 5 finishes the 2018-vs-2023 quote set. Re-read yesterday's lines side by side: peak talk was "fundamentally solid" demand (Samsung, 2017) and a market "structurally different" (Micron, 2018); trough talk was the "worst downturn in the last 13 years" (Micron, 2023) and cuts "by a meaningful level" (Samsung, 2023). Then compare with this week's language: "sold out through 2028" and five-year LTAs.</p>
+    <p style="margin-bottom:2pt"><b>Quick questions on Day 4:</b></p>
+    <ol>
+      <li>Micron called the market "structurally different" in Oct 2018, near the peak. Which 2026 phrase plays that role now, and what would prove it wrong?</li>
+      <li>Samsung in Oct 2018 blamed a coming slowdown on "seasonal effects." What is the 2026 equivalent excuse to watch for on the Oct 29 call?</li>
+      <li>In 2023, production cuts marked the trough. With 75–80% of 2027 under LTA, what replaces production cuts as the adjustment tool in the next downturn: price floors, deposits, or capex?</li>
+    </ol>
+    <p class="src">Model prep: toy Micron Bits × ASP workbook is in study/micron_bits_asp_model.xlsx, ready for Day 8 (Oct 13).</p>
+  </div>
+</section>
+
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://www.kedglobal.com/korean-chipmakers/newsView/ked202610090002" target="_blank" rel="noopener">KED Global: Samsung locks in 80% of next year&#x27;s memory output through long-term deals</a></li><li><a href="https://www.digitaltoday.co.kr/en/view/87299/samsung-memory-to-lock-in-future-results-with-contracts-not-market-cycle" target="_blank" rel="noopener">Digital Today: Samsung memory to lock in results with contracts</a></li><li><a href="https://www.trendforce.com/news/2026/07/30/news-samsung-targets-60-70-capacity-under-ltas-five-key-customers-reportedly-include-aws-microsoft-google/" target="_blank" rel="noopener">TrendForce: Samsung targets 60–70% capacity under LTAs (Jul 30)</a></li><li><a href="https://asia.nikkei.com/business/technology/exclusive-apple-cuts-iphone-18-pro-orders-due-to-soft-demand" target="_blank" rel="noopener">Nikkei Asia: Apple cuts iPhone 18 Pro orders due to soft demand</a></li><li><a href="https://www.macrumors.com/2026/10/09/apple-cuts-iphone-18-pro-orders-price-demand/" target="_blank" rel="noopener">MacRumors: Apple reportedly cuts iPhone 18 Pro orders</a></li><li><a href="https://etf.net/news/nikkei-says-apple-told-suppliers-to-cut-october-iphone-18-pro-component-orders-by-at-least-15-2026-10-09" target="_blank" rel="noopener">etf.net: Apple cut October iPhone 18 Pro component orders by at least 15%</a></li><li><a href="https://stockanalysis.com/stocks/mu/history/" target="_blank" rel="noopener">StockAnalysis: Micron price history</a></li><li><a href="https://x.com/SemiAnalysis_/status/2108724444138983719" target="_blank" rel="noopener">SemiAnalysis on Nvidia off-balance-sheet obligations (X)</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #4 · Oct 10, 2026</span></div>
+</body>
+</html>
