@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Sun Nov 1, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Sunday, November 1, 2026</span><span>Vol. I · No. 26 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of ~09:30 IST · Weekend: US, Korea and Tokyo prices are Friday Oct 30 closes (carried)</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-11-01.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>KOREA CHIP EXPORTS (OCTOBER)</b><span class="big">$56.44B</span>+259.4% y/y · second month above $50B · total exports $115.28B (+93.7%) · MOTIR, Nov 1</div>
+    <div><b>SOX (FRI OCT 30 CLOSE, CARRIED)</b><span class="big">10,688.80</span>−7.20% · MU $884.74 (−5.30%) · SNDK $1,150.89 (−13.47%) · DDR5 16Gb spot $61.50 (TrendForce Oct 30, no weekend print)</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Trade · Korea · DRAM and NAND</div>
+  <h1 class="lead"><a href="https://en.yna.co.kr/view/AEN20261101000900320" target="_blank" rel="noopener">Korea’s Chip Exports Hit $56.4 Billion in October as DRAM Prices Keep Rising</a></h1>
+  <p class="deck">Semiconductor shipments more than tripled from a year earlier and topped $50 billion for a second month, though they came in below September’s record. The ministry’s DRAM price series rose again; its NAND price was flat for a second month.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~09:30 IST Sunday (UTC+2) · Markets closed: prices are Friday Oct 30 closes · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · Korea October trade and contract prices</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Korea October exports</td></tr>
+        <tr><td>Total exports (y/y)</td><td class="n">$115.28B (+93.7%)</td></tr>
+        <tr><td>Semiconductors (y/y)</td><td class="n">$56.44B (+259.4%)</td></tr>
+        <tr><td>Chips, September record</td><td class="n">$60.3B</td></tr>
+        <tr><td>Computers incl. SSDs (y/y)</td><td class="n">$5.85B (+496.6%)</td></tr>
+        <tr><td>Chip-equipment imports (y/y)</td><td class="n">$2.52B (+49.2%)</td></tr>
+        <tr><td>DDR5 16Gb / NAND 128Gb fixed (MOTIR)</td><td class="n">$50.0 (Sep $48.0) / $30.6 flat</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">Contract prices and Friday closes (carried)</td></tr>
+        <tr><td>DDR4 8Gb contract, Oct (DRAMeXchange)</td><td class="n">$27.50 (+5.77%)</td></tr>
+        <tr><td>MLC NAND 128Gb contract, Oct</td><td class="n">$30.61 (flat)</td></tr>
+        <tr><td>Micron / Sandisk</td><td class="n">$884.74 (−5.30%) / $1,150.89 (−13.47%)</td></tr>
+        <tr><td>SK hynix / Samsung</td><td class="n">₩1,418,000 (−7.08%) / ₩225,000 (−3.02%)</td></tr>
+        <tr><td>KOSPI / SOX</td><td class="n">5,730.74 (−3.48%) / −7.20%</td></tr>
+        <tr><td>DDR5 16Gb spot (Oct 30)</td><td class="n">$61.50 (+0.27%)</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: Korea’s memory exports are still running at record levels, and DRAM prices are still climbing, but NAND benchmark prices have stopped rising. Markets were shut for the weekend, so all share prices are Friday Oct 30 closes. Sources: Ministry of Trade, Industry and Resources (MOTIR), Yonhap, Asia Economy, Reuters; DRAMeXchange via BusinessKorea; prices from the Oct 31 edition (Yahoo Finance, TrendForce).</div>
+  </aside>
+
+  <p>Korea’s exports rose 93.7% from a year earlier to $115.28 billion in October, close to the +93.2% a Reuters poll expected, and the trade surplus was $42.5 billion (Yonhap, Reuters). Chips made up nearly half: $56.44 billion, up 259.4%, the second month above $50 billion but below September’s record $60.3 billion (MOTIR, Asia Economy). Computer exports, driven by server SSDs, rose 496.6% to $5.85 billion.</p>
+  <p>The ministry’s fixed-price series shows where the strength is. DDR5 16Gb rose to $50.0 from $48.0 in September, its fourth straight monthly rise from $40.0 in June. The 128Gb NAND price was $30.6 for a second month, after $28.8 in June (MOTIR).</p>
+  <p><b>Our call:</b> unchanged overall. DRAM is still tightening; NAND price growth has stalled. <span class="tag inv">Cycle signal: DRAM firm, NAND flat</span></p>
+
+  <article class="story">
+    <div class="kicker">Prices · Contract</div>
+    <h2><a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=280117" target="_blank" rel="noopener">DRAM Contract Price Sets a Record While NAND’s 21-Month Climb Stalls</a></h2>
+    <p>DRAMeXchange put October’s DDR4 8Gb PC DRAM contract price at a record $27.50, up 5.77% from $26.00 in September. The 128Gb MLC NAND benchmark held at $30.61, ending 21 straight monthly rises (BusinessKorea, Osegi). TrendForce says MLC buyers are switching to relatively cheaper SLC or TLC parts, and sees MLC easing slightly in the fourth quarter, while SLC rose 5–10% in October. It kept its forecast of a 13–18% rise in fourth-quarter PC DRAM contract prices expects November prices slightly above October’s, and sees Korean makers’ PC DRAM output falling more than 20% next year.</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Customers · OpenAI</div>
+    <h2><a href="https://www.straitstimes.com/business/openais-altman-meets-samsung-executives-as-chip-crunch-deepens" target="_blank" rel="noopener">Altman Meets Samsung and SK Leaders as the Memory Crunch Deepens</a></h2>
+    <p>OpenAI’s Sam Altman met about 50 Samsung executives in Yongin on Saturday, building on the deal for Samsung to supply memory for the Stargate project (Bloomberg via The Straits Times, Seoul Economic Daily). SK Group chairman Chey Tae-won hosted him for lunch the same day, with SK hynix and SK Telecom executives present; local press expect HBM supply and AI data centers to have been discussed (Yonhap, Financial News). No new supply deal was announced. When the letters of intent were signed a year ago, OpenAI said the two makers were targeting up to 900,000 DRAM wafers a month.</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Supply · China</div>
+    <h2><a href="https://www.globaltimes.cn/page/202610/1373367.shtml" target="_blank" rel="noopener">CXMT Says Its Next-Generation 4F² DRAM Has Passed Sample Validation</a></h2>
+    <p>China’s CXMT said its sixth-generation DRAM platform, built on a 4F² vertical-channel cell, has completed engineering-sample validation. Customer qualification comes next, and it plans to send DDR5 server-module (RDIMM) samples by the end of 2026 (Global Times, Yonhap). CXMT says it is first to reach this stage; Samsung aims to mass-produce 4F² DRAM by 2028. No yields or volumes were given. Nine-month revenue rose 738.5% to 269.02 billion yuan.</p>
+  </article>
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Oct 31, 08:00 IST</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Sandisk targets cut after the selloff.</b> Evercore $2,500 (from $2,800), BofA $2,000 (from $2,500), Melius $2,600 (from $3,600), Goldman $2,000 (from $2,200), Wells Fargo $1,300 (from $1,550). <span class="src">Broker notes via semis digest</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Memory still the top pick.</b> Cantor: SOX −9% on the week, still +51% this year; ranks Memory over Compute over chip equipment, with Micron, Sandisk, Western Digital and Seagate among its top picks. <span class="src">Cantor weekly</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Tool makers still see memory demand.</b> KLA’s DRAM revenue rose 71% q/q in the September quarter, it guides +58% for December, and memory reaches 40% of its mix in 2027. <span class="src">Jefferies semis daily</span></div>
+  <div class="brief"><b class="h">Memory’s share of cloud budgets.</b> Morgan Stanley puts memory spending at 48% of cloud capex in 2026 and 53% in 2027; JPMorgan sees PC demand −12% in 2026 and −10% in 2027. <span class="src">Broker notes via semis digest</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since Sat ~08:00 · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@jukan05</span> · Oct 31 09:38<br>Altman made a visit to Korea to meet Samsung’s top executives; local media say he also met SK hynix, a year after the trip that started the RAM price surge.<a class="src" href="https://x.com/jukan05/status/2116434574993666327">x.com/…/2116434574993666327</a></li>
+    <li><span class="handle">@Unclestocknotes</span> · Oct 31 20:03<br>October DDR4 8Gb contract +5.77% to a record $27.50; MLC NAND flat at $30.61, ending 21 monthly rises. “Product-specific… does not establish a peak” in NAND.<a class="src" href="https://x.com/Unclestocknotes/status/2116592013684703287">x.com/…/2116592013684703287</a></li>
+    <li><span class="handle">@jasonschips</span> · Nov 1 00:03 <span class="tag">Unconfirmed</span><br>Reports say OpenAI now seeks up to $20B in its funding round, down from a $30B target; the Samsung meeting announced no new chip volumes.<a class="src" href="https://x.com/jasonschips/status/2116652326064677252">x.com/…/2116652326064677252</a></li>
+    <li><span class="handle">@SemiconductorsX</span> · Nov 1 04:40<br>SK hynix DRAM sales ₩19.1T → ₩57.6T → ₩78.4T (3Q25, 2Q26, 3Q26); NAND ₩5.0T → ₩21.4T → ₩25.7T.<a class="src" href="https://x.com/SemiconductorsX/status/2116721903478157639">x.com/…/2116721903478157639</a></li>
+    <li><span class="handle">@ren_stocks</span> · Nov 1 05:44 <span class="tag">Opinion</span><br>Will be a net buyer of Micron, Sandisk and others over the coming months: “Buy in November, sell in June.”<a class="src" href="https://x.com/ren_stocks/status/2116738074168500325">x.com/…/2116738074168500325</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Unchanged: DRAM still tightening, NAND prices stalled</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Oct 31 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>DDR4 8Gb contract +5.77%, a record; MOTIR DDR5 16Gb +4.2% m/m; MLC NAND and MOTIR NAND flat</td><td class="n">DRAM up, NAND flat</td></tr>
+    <tr><td><b>LTAs / lead times</b></td><td>No new deals; Altman met Samsung and SK leaders with no supply contract announced</td><td class="n">Long, steady</td></tr>
+    <tr><td><b>Guide vs consensus</b></td><td>Korea exports +93.7% vs +93.2% poll; chips below September’s record</td><td class="n">In line</td></tr>
+    <tr><td><b>Capex / new supply</b></td><td>Korea chip-equipment imports +49.2%; CXMT 4F² passes sample validation, server samples by year-end</td><td class="n">Building</td></tr>
+    <tr><td><b>Demand / de-spec</b></td><td>SSD exports +496.6%; MLC buyers moving to SLC or TLC; PC output cuts expected in 2027</td><td class="n">AI up, PCs down</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict vs previous call (No. 25, Oct 31)</b><br>Late upcycle; tight through 2027 and booked into 2028. Unchanged overall. DRAM is a touch firmer (record DDR4 contract, a fourth straight rise in Korea’s DDR5 price, near-record chip exports); NAND is looser (MLC benchmark’s 21-month run over, Korea’s NAND price flat for a second month, echoing Kioxia’s guide). Supply keeps building: tool imports up, CXMT’s 4F² DRAM in sampling. Playbook: late-cycle amber for NAND, not a bust signal while DRAM contract gains still accelerate.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Nov 1–14 · Israel time (IST, UTC+2) · US cash open now 16:30</span></div>
+  <table class="ev">
+    <tr><td class="dt">Mon Nov 2</td><td>Apple FQ4 after the US close (call 00:00 Nov 3)</td><td class="st">Demand</td></tr>
+    <tr><td class="dt">Tue Nov 3</td><td>US midterm elections · AMD (call 00:00 Nov 4) · Supermicro after the close</td><td class="st">AI</td></tr>
+    <tr><td class="dt">Wed Nov 4</td><td>Qualcomm (call 23:45) · Arm (call 00:00 Nov 5)</td><td class="st">Phones</td></tr>
+    <tr><td class="dt">Fri Nov 6</td><td>US payrolls 15:30 · Micron Taoyuan union talks resume (reported)</td><td class="st">Macro</td></tr>
+    <tr><td class="dt">Mon Nov 9</td><td>Sandisk split record date (8-for-1; split-adjusted trading from Nov 20)</td><td class="st">NAND</td></tr>
+    <tr><td class="dt">Tue Nov 10</td><td>TSMC October sales (07:30) · US CPI 15:30 · CoreWeave</td><td class="st">AI</td></tr>
+  </table>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://en.yna.co.kr/view/AEN20261101000900320" target="_blank" rel="noopener">Yonhap: S. Korea&#x27;s monthly exports hit US$115.3 bln in Oct. on record chip sales</a></li><li><a href="https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172360/view" target="_blank" rel="noopener">MOTIR: October 2026 import-export release</a></li><li><a href="https://www.yna.co.kr/view/AKR20261101014000003" target="_blank" rel="noopener">Yonhap (Korean): October exports</a></li><li><a href="https://ca.investing.com/news/economic-indicators/south-korea-exports-nearly-double-in-october-on-ai-investment-boom-4919961" target="_blank" rel="noopener">Reuters via Investing.com: South Korea exports nearly double in October</a></li><li><a href="https://en.infomaxai.com/news/articleView.html?idxno=146273" target="_blank" rel="noopener">Infomax: Korea October exports</a></li><li><a href="https://www.asiae.co.kr/en/article/2026110110285709510" target="_blank" rel="noopener">Asia Economy: Korea October exports</a></li><li><a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=280117" target="_blank" rel="noopener">BusinessKorea: DRAM prices reach new record in October</a></li><li><a href="https://osegi.com/en/dram-contract-prices-record-october-nand-flat" target="_blank" rel="noopener">Osegi: DRAM contract prices record, NAND flat</a></li><li><a href="https://www.straitstimes.com/business/openais-altman-meets-samsung-executives-as-chip-crunch-deepens" target="_blank" rel="noopener">The Straits Times (Bloomberg): Altman meets Samsung executives</a></li><li><a href="https://en.yna.co.kr/view/AEN20261031002651315" target="_blank" rel="noopener">Yonhap: Altman visit</a></li><li><a href="https://en.sedaily.com/finance/2026/10/31/openais-altman-returns-to-samsung-discusses-ai-future-with" target="_blank" rel="noopener">Seoul Economic Daily: Altman returns to Samsung</a></li><li><a href="https://en.fnnews.com/news/202610311548258059" target="_blank" rel="noopener">Financial News: Chey Tae-won and Altman</a></li><li><a href="https://www.globaltimes.cn/page/202610/1373367.shtml" target="_blank" rel="noopener">Global Times: CXMT 4F² engineering sample validation</a></li><li><a href="https://www.yna.co.kr/view/AKR20261101023300089" target="_blank" rel="noopener">Yonhap (Korean): CXMT 4F²</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #26 · Nov 1, 2026</span></div>
+</body>
+</html>
