@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Wed Nov 4, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Wednesday, November 4, 2026</span><span>Vol. I · No. 29 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of ~08:40 IST · Korea: Wednesday 2 p.m. KST · Tokyo: Wednesday late session · US: Tuesday Nov 3 closes</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-11-04.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>KOSPI (WED, 2 P.M. KST)</b><span class="big">5,560.47</span>−1.56% after opening +2.43%; foreigners net sold ₩2.5 trillion · Samsung ₩214,000 (−2.51%), SK hynix ₩1,357,000 (−2.93%) · Financial News</div>
+    <div><b>MICRON (TUE CLOSE)</b><span class="big">$855.10</span>+2.58%; Sandisk $1,126.52 (+4.78%); SOX 10,600.40 (+2.63%) before AMD’s results and the midterm count · Financial News/Yonhap</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Markets · Policy · Demand</div>
+  <h1 class="lead"><a href="https://www.cnbc.com/2026/11/04/ai-stocks-texas-governor-data-centers.html" target="_blank" rel="noopener">AMD Says Demand Beats Supply, but the Midterm Count Knocks Memory Stocks Back</a></h1>
+  <p class="deck">AMD’s results backed the case for tight memory into 2027. Then early US election results, including a Texas governor who backs pausing data-center approvals, turned Seoul and Tokyo lower.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~08:40 IST Wednesday (UTC+2) · Korean prices at 2 p.m. KST, before the close · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · Wednesday in Asia, Tuesday in New York</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Asia, Wednesday (Korea 14:00 KST)</td></tr>
+        <tr><td>KOSPI</td><td class="n">5,560.47 (−1.56%)</td></tr>
+        <tr><td>Samsung</td><td class="n">₩214,000 (−2.51%)</td></tr>
+        <tr><td>SK hynix</td><td class="n">₩1,357,000 (−2.93%)</td></tr>
+        <tr><td>Kioxia, intraday low</td><td class="n">¥9,635 (−15%)</td></tr>
+        <tr><td>Nanya Oct revenue</td><td class="n">NT$46.48B (+488% y/y)</td></tr>
+        <tr><td>USD/KRW</td><td class="n">~1,341</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">US Tuesday closes and prices</td></tr>
+        <tr><td>Micron</td><td class="n">$855.10 (+2.58%)</td></tr>
+        <tr><td>Sandisk</td><td class="n">$1,126.52 (+4.78%)</td></tr>
+        <tr><td>SOX</td><td class="n">10,600.40 (+2.63%)</td></tr>
+        <tr><td>AMD Q4 revenue guide</td><td class="n">~$17B ±3%</td></tr>
+        <tr><td>DDR5 16Gb spot</td><td class="n">$61.50 (flat)</td></tr>
+        <tr><td>DDR4 16Gb spot</td><td class="n">$82.67 (−0.06%)</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: memory fundamentals got stronger overnight, but the stocks are trading on US politics and AI spending risk. Kioxia’s low is against Tuesday’s ¥11,345 close; it was about −8% late in the session (MONEY BOX). Correction to No. 28: Tuesday’s closes were Samsung −4.15% and SK hynix −5.03% (Yonhap). Sources: Financial News, Hankyung, Yonhap, MONEY BOX, AMD, TrendForce, market quote (won).</div>
+  </aside>
+
+  <p>AMD reported third-quarter revenue of $13.4 billion, up 45%, with data-center sales up 97% to $8.5 billion, and guided the fourth quarter to about $17 billion. It expects revenue to grow more than 80% in 2027. Chief executive Lisa Su said “demand is higher than supply” and that AMD has secured “wafers, substrates, advanced packaging, the memory” it needs, under long-term agreements with suppliers and with customers, where costs are “shared”. Micron rose 2.58% and Sandisk 4.78% on Tuesday before the report (AMD, CNBC, call transcript).</p>
+  <p>Overnight, the mood changed. Democrats were projected to win the House, and possibly the Senate. In Texas, AP projected Hinojosa as governor; she supports a moratorium on new data centers. Nasdaq-100 futures fell about 0.8% and CoreWeave about 7% (CNBC). Seoul opened 2.43% higher on AMD, then turned lower as foreigners sold ₩2.5 trillion of shares, and Samsung and SK hynix fell 2–3% by 2 p.m. (Financial News, Yonhap). In Tokyo, Kioxia fell as much as 15% intraday, its second straight sharp drop (MONEY BOX).</p>
+  <p><b>Our call:</b> unchanged overall; DRAM steady with firmer demand signals, NAND steady. <span class="tag inv">Cycle signal: fundamentals intact; the new risk is US policy on data-center timing</span></p>
+
+  <article class="story">
+    <div class="kicker">Demand · Customers · PCs</div>
+    <h2><a href="https://stockanalysis.com/stocks/amd/transcripts/724028-q3-2026/" target="_blank" rel="noopener">AMD Has Locked In Its Memory. PC Buyers Are Paying for It</a></h2>
+    <p>AMD said PC sell-through slowed “as higher memory and component costs weighed on demand”. Client revenue fell 4% from the second quarter, and AMD plans for 2027 PC units to fall by double digits. Gross margin was 56%, guided to about 55%, and inventory rose to $11.5 billion. AMD expects data center to be more than 80% of revenue in 2027. Its comments fit a pattern: big AI buyers sign long contracts and share the cost, while consumer devices absorb the price rises (AMD, call transcript, CNBC).</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Policy · Data centers</div>
+    <h2><a href="https://www.cnbc.com/2026/11/04/ai-stocks-texas-governor-data-centers.html" target="_blank" rel="noopener">Texas Vote Puts the Largest Planned Data-Center Market on Pause Watch</a></h2>
+    <p>Wells Fargo says Texas accounts for 27% of planned US data-center capacity in gigawatts, and its strategist called the result a “left-tail event” for AI stocks (CNBC). A moratorium would need the state legislature, so nothing has stopped yet. For memory, the risk is timing: projects for 2027–28 could slip, while chips for this year and next are already under contract. <span class="tag">Opinion</span> Investor Brad Gerstner says 10–15 GW of the 43 GW expected online in 2027 will not arrive (via X).</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Supply · Taiwan · Korea</div>
+    <h2><a href="https://www.ctee.com.tw/news/20261103701576-430201" target="_blank" rel="noopener">Winbond Commits NT$73 Billion to a New DRAM Fab as Nanya Posts a 12th Straight Record</a></h2>
+    <p>Winbond’s board approved NT$73.163 billion for Kaohsiung Module B: 50,000–60,000 wafers a month at 16nm, ground-breaking in late December, first small output in the second half of 2029 and full output in 2030. President Chen Pei-ming said supply stays tight in 2027–28, some tool lead times exceed two years, and long-term deals with big customers cover 2027–2030. Fourth-quarter prices still rise, but by less than in the third quarter (Commercial Times). Nanya’s October revenue was NT$46.48 billion, up 3.07% from September and 487.73% from a year earlier (TechNews). Reuters reports that the US is holding up tool licences for SK hynix’s Dalian NAND expansion, while its Solidigm unit weighs about $45 billion for two fabs in New York (Investing.com, Aju). Separately, Samsung’s second Taylor fab will make 2nm HBM base dies for AMD and Nvidia from 2030, Maeil Business reports; Samsung declined to comment (CNA) <span class="tag">Report</span>.</p>
+  </article>
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Nov 3, 08:00 IST</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Memory still the top pick.</b> Memory remains the preferred semis group on disciplined supply, LTAs, strong balance sheets and buybacks, despite near-term pressure. The election is not expected to change long-term US/Asia chip or data-center expansion. PCs stay weak through 2027, with client recovery late 1H27 to early 2H27. <span class="src">Sell-side semis call notes (Nov 3)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">AMD, read by the brokers.</b> One sees 2027 revenue around $94 billion, versus about $90 billion consensus; another says higher memory costs weigh on PC demand; a third sees 80% growth in 2027 despite PC headwinds, with gross margin held near 55%. <span class="src">Broker notes (AMD Q3)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Texas after Abbott.</b> A broker expects a pause on new data-center permits until the legislature passes protections, with new approvals mid-2027 at best. <span class="src">Broker note (AI infrastructure)</span></div>
+  <div class="brief"><b class="h">Near capitulation?</b> Semis positioning slipped below neutral, and Apple’s December-quarter margin is under pressure from memory costs. <span class="src">Jefferies semis daily (Nov 3)</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since Tue ~08:00 · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@jukan05</span> · Nov 4 03:51<br><span class="tag">Unconfirmed</span> Korean media: Applied, ASML, Lam, TEL and KLA are near final 2028 tool contracts with chipmakers, with some 2029 orders discussed.<a class="src" href="https://x.com/jukan05/status/2117796874392609013">x.com/…/2117796874392609013</a></li>
+    <li><span class="handle">@wallstengine</span> · Nov 3 18:04<br>Citi still sees 2027 undersupply: DRAM demand +28% vs supply +24%, NAND +26% vs +22%; deficits narrow to 3.8% and 3.3%.<a class="src" href="https://x.com/wallstengine/status/2117649174665838604">x.com/…/2117649174665838604</a></li>
+    <li><span class="handle">@pequityresearch</span> · Nov 4 01:00<br>Korea Investment &amp; Securities sees SK hynix 4Q DRAM ASP +18% q/q and NAND +13%.<a class="src" href="https://x.com/pequityresearch/status/2117753693084803308">x.com/…/2117753693084803308</a></li>
+    <li><span class="handle">@pequityresearch</span> · Nov 3 21:00<br>Goldman projects 2027 NAND ASP +34% for Samsung and +30% for SK hynix.<a class="src" href="https://x.com/pequityresearch/status/2117693293160976694">x.com/…/2117693293160976694</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Unchanged: DRAM steady, demand firmer, policy risk up</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Nov 3 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>Winbond: 4Q prices still rising, by less than 3Q; KIS sees SK hynix 4Q DRAM ASP +18%, NAND +13%; Goldman 2027 NAND ASP +30–34%</td><td class="n">Rising, slower</td></tr>
+    <tr><td><b>Spot vs contract</b></td><td>DDR5 16Gb $61.50 flat; DDR4 16Gb $82.67 (−0.06%); TrendForce calls it a “prolonged standoff”, not a fall</td><td class="n">Flat</td></tr>
+    <tr><td><b>LTAs / lead times</b></td><td>AMD has memory under LTAs, with costs shared with customers; Winbond LTAs cover 2027–2030; some tool lead times over 2 years</td><td class="n">Long, firm</td></tr>
+    <tr><td><b>Margins / guide</b></td><td>AMD guides Q4 to ~$17B and 2027 growth above 80%; Nanya’s 12th straight record month; PC units seen down double digits in 2027</td><td class="n">Peak zone</td></tr>
+    <tr><td><b>Capex / new supply</b></td><td>Winbond Module B (output 2H29); Solidigm ~$45B NY plan; Samsung Taylor base dies 2030 (report); Dalian licences held up</td><td class="n">Building, 2029–30</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict vs previous call (No. 28, Nov 3)</b><br>Late upcycle; tight through 2027 and booked into 2028. Unchanged overall. DRAM is steady, and demand signals firmed: AMD says demand exceeds supply and has its memory under long-term contracts, Winbond sees tight supply in 2027–28, Nanya set another record, and Citi still sees a 2027 shortfall, though a smaller one. NAND is steady after two looser days. The new risk is political: Texas could delay data-center approvals, which would hit 2027–28 timing and valuations before it hits contract prices. Spot is flat, not falling. Playbook: margins are in the peak zone, and new fabs keep being announced, but their output lands in 2029–30. Next tests: Qualcomm and Arm tonight, and Nvidia on Nov 17.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Nov 4–18 · Israel time (IST, UTC+2) · US cash open 16:30</span></div>
+  <table class="ev">
+    <tr><td class="dt">Wed Nov 4</td><td>Qualcomm (call 23:45) · Arm (call 00:00 Nov 5) · Coherent, GlobalFoundries, Camtek · Thu: Nova, Microchip</td><td class="st">Phones</td></tr>
+    <tr><td class="dt">Fri Nov 6</td><td>US payrolls 15:30 · Micron Taoyuan union talks (reported)</td><td class="st">Macro</td></tr>
+    <tr><td class="dt">Mon Nov 9</td><td>Sandisk split record date (8-for-1; split-adjusted trading from Nov 20)</td><td class="st">NAND</td></tr>
+    <tr><td class="dt">Tue Nov 10</td><td>TSMC October sales (07:30) · US CPI 15:30 · CoreWeave</td><td class="st">AI</td></tr>
+    <tr><td class="dt">~Wed Nov 11</td><td>Korea Nov 1–10 exports (chips)</td><td class="st">Trade</td></tr>
+    <tr><td class="dt">Tue Nov 17</td><td>Nvidia FQ3 results (call 00:00 Nov 18)</td><td class="st">HBM</td></tr>
+  </table>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://en.fnnews.com/news/202611041354593202" target="_blank" rel="noopener">Financial News: KOSPI weak as foreigners sell ₩2.5T (afternoon wrap)</a></li><li><a href="https://www.yna.co.kr/view/AKR20261104066651008" target="_blank" rel="noopener">Yonhap: KOSPI turns lower on foreign selling</a></li><li><a href="https://www.fnnews.com/news/202611040758072019" target="_blank" rel="noopener">Financial News/Yonhap: US Tuesday closes</a></li><li><a href="https://moneybox.jp/keyword/news.php?news_id=198860" target="_blank" rel="noopener">MONEY BOX: Kioxia, Nov 4</a></li><li><a href="https://en.kabutan.com/jp/news/n202611040502" target="_blank" rel="noopener">Kabutan: Tokyo chips sold</a></li><li><a href="https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html" target="_blank" rel="noopener">CNBC: AMD Q3 earnings</a></li><li><a href="https://stockanalysis.com/stocks/amd/transcripts/724028-q3-2026/" target="_blank" rel="noopener">AMD Q3 2026 call transcript</a></li><li><a href="https://www.cnbc.com/2026/11/04/ai-stocks-texas-governor-data-centers.html" target="_blank" rel="noopener">CNBC: AI stocks, Texas governor and data centers</a></li><li><a href="https://www.ctee.com.tw/news/20261103701576-430201" target="_blank" rel="noopener">Commercial Times: Winbond Module B</a></li><li><a href="https://technews.tw/2026/11/03/nanya-technology-2026-oct-revenue/" target="_blank" rel="noopener">TechNews: Nanya October revenue</a></li><li><a href="https://www.investing.com/news/stock-market-news/sk-hynixs-us-expansion-plans-hit-snag-over-china-license-delays--report-4996232" target="_blank" rel="noopener">Reuters via Investing.com: SK hynix US expansion snag over China licences</a></li><li><a href="https://www.ajupress.com/view/20261104103238484" target="_blank" rel="noopener">Aju Press: Solidigm New York plan</a></li><li><a href="https://www.channelnewsasia.com/business/samsung-make-amd-nvidia-chip-parts-second-texas-plant-maeil-business-reports-6516536" target="_blank" rel="noopener">CNA: Samsung Taylor fab 2 base dies (Maeil report)</a></li><li><a href="https://www.trendforce.com/price/dram/dram_spot" target="_blank" rel="noopener">TrendForce DRAM spot prices</a></li><li><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener">Nvidia: Q3 FY27 conference call</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #29 · Nov 4, 2026</span></div>
+</body>
+</html>
