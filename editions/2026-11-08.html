@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Sun Nov 8, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Sunday, November 8, 2026</span><span>Vol. I · No. 33 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of ~08:20 IST · Weekend: no cash session · Last official: Friday closes · Spot: TrendForce Nov 6 18:10 GMT+8 (unchanged)</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-11-08.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>WEEKEND — LAST OFFICIAL (FRI)</b><span class="big">KOSPI 5,059.69</span>−6.02%; Samsung ₩188,700 · SK hynix ₩1,132,000; foreigners −₩2.77T · no Sat/Sun session · Yonhap / Korea Herald</div>
+    <div><b>MICRON (FRI CLOSE) · SPOT UNCHANGED</b><span class="big">$690.00</span>+5.12%; SOX 9,390.25 (+4.21%); DDR5 16Gb $60.167 (−0.82%) still Nov 6 18:10 GMT+8 · Exa, TrendForce</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Foundry · Weekend Follow-up</div>
+  <h1 class="lead"><a href="https://www.tomshardware.com/pc-components/dram/tsmc-denies-exploring-3d-dram-at-nvidias-request-advanced-memory-tech-is-still-years-from-market-viability" target="_blank" rel="noopener">TSMC Restates Foundry Focus After Friday’s 3D DRAM Report</a></h1>
+  <p class="deck">A TSMC spokesperson told Tom’s Hardware the company “focuses on our core business at all times, which is dedicated IC foundry,” and that its mission is to remain “the trusted technology and capacity provider of the global logic IC industry.” Tom’s frames the remarks as a denial of Friday’s report that TSMC was charting 3D DRAM at Nvidia’s request. The quoted statement does not name 3D DRAM or Nvidia; the two accounts now conflict. Cash markets were closed. Spot DRAM is unchanged.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~08:20 IST Sunday (UTC+2) · Weekend: no US/Asia cash session · Last official Friday closes · Spot TrendForce Nov 6 18:10 GMT+8, unchanged · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · Weekend carry · Friday official · Spot unchanged</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Asia, Friday FINAL (no weekend session)</td></tr>
+        <tr><td>KOSPI, Fri FINAL</td><td class="n">5,059.69 (−6.02%)</td></tr>
+        <tr><td>Samsung, Fri FINAL</td><td class="n">₩188,700 (−6.35%)</td></tr>
+        <tr><td>SK hynix, Fri FINAL</td><td class="n">₩1,132,000 (−10.44%)</td></tr>
+        <tr><td>USD/KRW (Fri 15:30 KST)</td><td class="n">1,356.6</td></tr>
+        <tr><td>Nikkei 225</td><td class="n">57,434.77 (−5.96%)</td></tr>
+        <tr><td>Foreigners (Korea Fri)</td><td class="n">−₩2.77T</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">US Friday closes and spot (unchanged)</td></tr>
+        <tr><td>Micron</td><td class="n">$690.00 (+5.12%)</td></tr>
+        <tr><td>Sandisk</td><td class="n">$835.06 (+3.55%)</td></tr>
+        <tr><td>SOX</td><td class="n">9,390.25 (+4.21%)</td></tr>
+        <tr><td>Lam Research</td><td class="n">$200.44 (+8.23%)</td></tr>
+        <tr><td>DDR5 16Gb spot</td><td class="n">$60.17 (−0.82%)</td></tr>
+        <tr><td>DDR4 16Gb spot</td><td class="n">$80.82 (−1.06%)</td></tr>
+        <tr><td>512Gb TLC wafer spot</td><td class="n">$16.15 (−4.33% w/w)</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: weekend carry. No Sat/Sun cash session in the US, Korea, Japan or Taiwan, and no new TrendForce DRAM print (live page still Last Update 2026-11-06 18:10 GMT+8). Friday’s split tape stands: US rebound (MU $690 / +5.12%, SOX +4.21%) vs Asia plunge (KOSPI −6.02%, SK hynix −10.44%). Wafer weekly remains the Nov 4 Insights print; the live flash page is still stale Oct 26. Sources: Yonhap, Korea Herald, Exa, Motley Fool, TrendForce.</div>
+  </aside>
+
+  <p>On Saturday, Tom’s Hardware (Anton Shilov) published comments from a TSMC spokesperson: the company “focuses on our core business at all times, which is dedicated IC foundry,” and “Our mission is to be the trusted technology and capacity provider of the global logic IC industry for years to come.” Tom’s presents this as “essentially… a denial” of Friday’s The Information report, via Reuters, that TSMC had begun early plans for <b>3D DRAM</b> at Nvidia’s request, led by Hsu Kuo-chin, including options to build a new fab or acquire/convert an existing plant (The Information / Reuters via Investing.com; Tom’s Hardware, Nov 7).</p>
+  <p>FourWeekMBA notes that the quoted statement does <b>not mention 3D DRAM or Nvidia by name</b>. The Information’s account (two people familiar; no timeline, capex or production date) still stands as reported — the two versions now conflict. Nvidia had still not commented in the Tom’s and Reuters wraps. Tom’s adds that even incumbents are years from commercial 3D DRAM, and that entering would take billions and years of DRAM-process R&amp;D and could complicate TSMC’s SK hynix HBM base-die partnership. Weekend chatter that “3D DRAM” might mean oxide-semiconductor eDRAM rather than commodity DRAM remains <span class="tag">Unconfirmed</span> — no new primary source. Either reading is still not near-term supply.</p>
+  <p>Physical prints did not move. TrendForce’s DRAM spot page is still dated Nov 6, 18:10 GMT+8: DDR5 16Gb <b>$60.167 (−0.82%)</b>, DDR4 16Gb <b>$80.815 (−1.06%)</b>. The 512Gb TLC wafer weekly remains <b>$16.152 (−4.33% w/w)</b> from the Nov 4 Insights note. There was no third down day because there was no new session.</p>
+  <p><b>Our call:</b> late upcycle; tight through 2027 / into 2028 — unchanged on supply. No new official prices, no new spot session, no verified China GAC October print. TSMC’s 3D DRAM story is now contested by a foundry-focus statement; it was never near-term supply. Policy and sentiment risk remain elevated into a heavy week (Sandisk record and Onto Monday; TSMC sales and CPI Tuesday). <span class="tag inv">Cycle signal: weekend quiet; physical tightness intact</span></p>
+
+  <article class="story">
+    <div class="kicker">Specialty memory · Cycle color</div>
+    <h2><a href="https://finance.technews.tw/2026/11/07/memory-price-increases-have-reached-their-limit/" target="_blank" rel="noopener">Winbond Chairman Hopes Memory Prices Have Peaked</a></h2>
+    <p>Speaking to reporters at a weekend family-day event, Winbond chairman Arthur Chiao (焦佑鈞) said he does not think makers’ 70–80% gross margins can keep climbing — “consumers have no money” — and that he hopes prices have peaked. Phone and PC unit sales are already down; further memory inflation, he argued, would push buyers to keep old devices another year. Only AI still absorbs higher prices. If the up-leg started in July 2025, a normal two-year rise would end around <b>June 2027</b>. He worries a downturn that arrives too late would encourage indiscriminate fab building. From CSP conversations, he said 2027–28 data-center funding, land, power and buildings are already in place, so those builds should not be blocked by a funding gap or a change in development permits; he dates the next downcycle risk to <b>2029</b>, when funding limits become the constraint. US midterms, he said, could hit AI DC builds by 3–5% (not worrying) or 30–50% (then worry) — outsiders cannot yet tell which. This is one specialty-memory chairman’s view, not a broker supply-demand table (TechNews, Nov 7).</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Sell-side · Recirculation</div>
+    <h2><a href="https://www.investing.com/news/stock-market-news/citi-expects-continued-memory-undersupply-in-2027-4995860" target="_blank" rel="noopener">Citi Still Sees 2027 DRAM Undersupply at −3.8%</a></h2>
+    <p>A Nov 3 Citi note, recirculated on X over the weekend rather than newly initiated, still has 2027 DRAM undersupplied after Citi raised supply on higher bit-growth guidance from Samsung and SK hynix. The 2027 DRAM supply-demand gap is <b>−3.8%</b> (was −8.7%): supply +24% / demand +28%. NAND’s gap is −3.3% (was −6.1%): supply +22% / demand +26%. Citi raised 2027 capex-growth estimates to +55% DRAM / +35% NAND and put the current fulfillment ratio at about 70%. The note does not loosen a 2027 tightness call (Investing.com, Nov 3; chart relayed by @pequityresearch, Nov 8).</p>
+  </article>
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Nov 7, 08:20 IST</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Apple’s memory squeeze.</b> Q4 GM fell to 48% from 50% (about 1 point ex-tariffs, “primarily” memory). December-quarter GM guided to 45–46%. New CEO John Ternus called memory pricing “unprecedented.” Manufacturing purchase commitments rose <b>$33 billion</b> in one quarter; memory shortages could continue restricting Mac and iPad output. <span class="src">App Economy Insights (Nov 7)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Muse: mid-cycle, not peak; MU and SNDK top picks.</b> SOX −12% on the week vs S&amp;P +1%. Cantor: any GW/approval delay will be modest and “actually elongate the current cycle”; June–November sell-off is a mid-cycle correction. Semis ~13× CY28 consensus. Memory top picks: Micron and Sandisk. Buyers into Onto (Monday) and Applied Materials (Thursday). <span class="src">Cantor Weekly Muse-ings (Nov 7)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">DC ballots: restrictions, few outright bans.</b> Of 47 data-center ballot measures tracked in 2026, 44 favored tighter restrictions as of Nov 5; only six (~13%) proposed outright bans. Cantor: a shift in bargaining power toward communities — delays and higher costs possible, not a wholesale rejection. <span class="src">Cantor Bits &amp; Bolts (Nov 7)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Taylor Fab 1 said to have started operations.</b> A CCB International recap (Nov 2) in Sunday’s AlphaSense hardware weekly says Samsung’s Taylor Fab 1 “has officially started operations.” Separate from the earlier Maeil/TrendForce report that Taylor Fab 2 is booked for 2nm HBM base dies (output ~2030). Also incremental in Jefferies’ Saturday SEMIS Daily: Texas governor-elect Hinojosa on CNN said he does not “hate data centers” but “the way they are taking advantage of Texas”; August global semiconductor sales +144.3%, 2026 sales already above $1 trillion, with Jefferies modeling growth rates to peak around October. <span class="src">AlphaSense weekly / CCB (Nov 8 email); Jefferies SEMIS Daily Saturday</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since Sat ~08:20 · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@jukan05</span> · Nov 7 12:13<br>Questions how durable memory LTAs will be in a downcycle, citing onsemi and Microchip amendments and pushouts. The most reliable piece, he argues, is prepayments; volumes can slip a year or two without “breaking” the contract.<a class="src" href="https://x.com/jukan05/status/2119010267853881618">x.com/…/2119010267853881618</a></li>
+    <li><span class="handle">@damnang2</span> · Nov 7 19:15<br>Reply: cancel-or-defer treats memory as a plain commodity. The same customers jointly design next-generation HBM and 3D stacked DRAM; slipping deliveries would hit their own launch schedules.<a class="src" href="https://x.com/damnang2/status/2119116632606023798">x.com/…/2119116632606023798</a></li>
+    <li><span class="handle">@jukan05</span> · Nov 8 01:41<br>Rebuttal: joint design has not reached foundry-style customization, and does not settle who holds leftover inventory if an accelerator plan is cut. “Memory has completely shed its commodity character” is, in his view, the most dangerous claim.<a class="src" href="https://x.com/jukan05/status/2119213699835756708">x.com/…/2119213699835756708</a></li>
+    <li><span class="handle">@pequityresearch</span> · Nov 8 02:21<br>Relays Citi’s DRAM S/D chart: 2027E gap −3.8%. Underlying note is dated Nov 3 — weekend recirculation, not a new initiation (see lead section).<a class="src" href="https://x.com/pequityresearch/status/2119223835648274567">x.com/…/2119223835648274567</a></li>
+    <li><span class="handle">@pequityresearch</span> · Nov 8 04:33<br>Relays Nomura: with big-tech responses and LTAs, the hit to memory from 2028F onward is “likely to be milder than the market fears.” Original note not fetched. <span class="tag">Unconfirmed</span> vs the PDF.<a class="src" href="https://x.com/pequityresearch/status/2119256844602667491">x.com/…/2119256844602667491</a></li>
+    <li><span class="handle">@LiDaosen</span> · Nov 8 01:50<br>Enters the LTA debate: HBM3E still allows multi-sourcing, “but HBM4 with TSMC logic base dies eliminates fungibility.” Excess wafers, he argues, become underutilization write-offs, not spot dumping.<a class="src" href="https://x.com/LiDaosen/status/2119216066182422706">x.com/…/2119216066182422706</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Supply tight; weekend quiet; policy risk still elevated</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Nov 7 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>No new contract print. Citi (Nov 3, recirculated) still has 2027 DRAM S/D −3.8% (supply +24% / demand +28%) after raising supply; NAND −3.3%</td><td class="n">Rising, slower</td></tr>
+    <tr><td><b>Spot vs contract</b></td><td>DDR5 16Gb $60.17 (−0.82%) and DDR4 16Gb $80.82 (−1.06%) unchanged — no new TrendForce session; wafer still $16.15 (−4.33% w/w)</td><td class="n">Unchanged</td></tr>
+    <tr><td><b>LTAs / lead times</b></td><td>CCB/CFRA recaps: Micron 26 SCAs &gt;35% of revenue through 2030; SKH 14 customers &gt;50% of 2027–28 capacity. Weekend X debate: Jukan on LTA durability vs Damnang/LiDaosen on custom-HBM lock-in</td><td class="n">Long, firm</td></tr>
+    <tr><td><b>Margins / guide</b></td><td>No new session (Fri split tape stands). Winbond’s Chiao hopes prices have peaked; Apple guided Dec-quarter GM to 45–46% on memory costs. Equities still pricing midterm/DC-regulation risk</td><td class="n">Peak zone</td></tr>
+    <tr><td><b>Capex / new supply</b></td><td>TSMC 3D DRAM now contested (spokesperson restates logic-foundry focus). YMTC 4th fab and Micron Fab 11E unchanged. CCB: Taylor Fab 1 has started operations</td><td class="n">Building, LT option</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict vs previous call (No. 32, Nov 7)</b><br>Late upcycle; tight through 2027 and into 2028 — unchanged on supply fundamentals. No new official prices, no new spot session, and China GAC October is still unverified. TSMC’s 3D DRAM-at-Nvidia-request story is now contested by a company statement that restates dedicated logic-foundry focus (the quote does not name 3D DRAM or Nvidia); either way it is not near-term supply. Winbond’s chairman hopes prices have peaked and sketches a normal two-year upcycle ending around June 2027 if dated from July 2025, but also says 2027–28 CSP builds are already funded and dates downcycle risk to 2029 — one specialty-maker view; Citi still has 2027 DRAM undersupply at −3.8%. Policy and sentiment risk remain elevated. Next: Sandisk record, Onto and Taiwan MOF Monday; TSMC October sales, US CPI, Infineon (European morning) and CoreWeave Tuesday; Korea 1–10 exports Wednesday (US equities stay open on Veterans Day); Applied Materials Thursday; Nvidia November 17.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Nov 9–20 · Israel time (IST, UTC+2) · US cash open 16:30</span></div>
+  <table class="ev">
+    <tr><td class="dt">Mon Nov 9</td><td>Sandisk split record date (8-for-1) · Onto Innovation after the close (call 23:30 IST) · Taiwan MOF Oct trade 10:00 IST</td><td class="st">NAND</td></tr>
+    <tr><td class="dt">Tue Nov 10</td><td>TSMC October sales 07:30 IST · US CPI 15:30 · Infineon Q4/FY (European morning) · CoreWeave after the close</td><td class="st">AI</td></tr>
+    <tr><td class="dt">Wed Nov 11</td><td>Korea Nov 1–10 exports · US Veterans Day — equity markets open (bonds typically closed)</td><td class="st">Trade</td></tr>
+    <tr><td class="dt">Thu Nov 12</td><td>Nebius before the open · Applied Materials after the close · Fri: US PPI 15:30</td><td class="st">WFE</td></tr>
+    <tr><td class="dt">Tue Nov 17</td><td>Nvidia FQ3 results (call 00:00 Nov 18) · SC26 exhibits Nov 17–19</td><td class="st">HBM</td></tr>
+    <tr><td class="dt">Thu Nov 20</td><td>Sandisk first split-adjusted trading day (effective after close Nov 19)</td><td class="st">NAND</td></tr>
+    <tr><td class="dt">Watch</td><td>China GAC October trade still not independently verified</td><td class="st">Trade</td></tr>
+  </table>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://www.tomshardware.com/pc-components/dram/tsmc-denies-exploring-3d-dram-at-nvidias-request-advanced-memory-tech-is-still-years-from-market-viability" target="_blank" rel="noopener">Tom&#x27;s Hardware: TSMC spokesperson restates dedicated IC foundry focus (Nov 7)</a></li><li><a href="https://www.investing.com/news/stock-market-news/tsmc-considers-making-advanced-memory-chips-the-information-reports-5008786" target="_blank" rel="noopener">Investing.com / Reuters: TSMC considers advanced memory chips (The Information, Nov 6)</a></li><li><a href="https://news.cnyes.com/news/id/6652126" target="_blank" rel="noopener">Cnyes: TSMC 3D DRAM wrap and Winbond skepticism (Nov 8)</a></li><li><a href="https://fourweekmba.com/ai-nvidia-linked-to-3-memory-packaging-moves-in-16-days/" target="_blank" rel="noopener">FourWeekMBA: quoted TSMC statement does not name 3D DRAM or Nvidia</a></li><li><a href="https://finance.technews.tw/2026/11/07/memory-price-increases-have-reached-their-limit/" target="_blank" rel="noopener">TechNews: Winbond chairman on memory-price limits (Nov 7)</a></li><li><a href="https://finance.technews.tw/2026/11/07/winbond-believes-that-memory-demand-will-be-strong-in-2027-2028/" target="_blank" rel="noopener">TechNews: Winbond on 2027–28 demand and 2029 cycle risk</a></li><li><a href="https://www.investing.com/news/stock-market-news/citi-expects-continued-memory-undersupply-in-2027-4995860" target="_blank" rel="noopener">Investing.com: Citi expects continued memory undersupply in 2027 (Nov 3)</a></li><li><a href="https://en.yna.co.kr/view/AEN20261106007852320" target="_blank" rel="noopener">Yonhap: Seoul stocks crash for 2nd day (Friday FINAL)</a></li><li><a href="https://www.koreaherald.com/article/10928857" target="_blank" rel="noopener">Korea Herald: Kospi plunges 6% amid AI sell-off</a></li><li><a href="https://www.japantimes.co.jp/business/2026/11/06/markets/market-nov-6/" target="_blank" rel="noopener">Japan Times: Market Nov 6 (Nikkei −5.96%)</a></li><li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/06/stock-market-today-nov-6-micron-technology-jumps-as-chip-stocks-rebound-from-thursday-s-rout/" target="_blank" rel="noopener">Motley Fool: Micron jumps as chip stocks rebound Nov 6</a></li><li><a href="https://www.trendforce.com/price/dram/dram_spot" target="_blank" rel="noopener">TrendForce DRAM spot prices</a></li><li><a href="https://www.trendforce.com/news/2026/11/04/insights-memory-spot-price-update-mainstream-ddr4-prices-dip-0-09-as-spot-premium-keeps-buyers-on-sidelines/" target="_blank" rel="noopener">TrendForce: weekly memory spot update (Nov 4)</a></li><li><a href="https://www.appeconomyinsights.com/p/pro-apples-memory-squeeze" target="_blank" rel="noopener">App Economy Insights: Apple’s Memory Squeeze</a></li><li><a href="https://investor.sandisk.com/static-files/adc41ac6-9db7-4e6a-a29f-f73c1a0123e4" target="_blank" rel="noopener">Sandisk: 8-for-1 split details</a></li><li><a href="https://www.fidelity.com/learning-center/smart-money/stock-market-holidays" target="_blank" rel="noopener">Fidelity: 2026 stock-market holidays (Veterans Day equities open)</a></li><li><a href="https://investor.tsmc.com/english/financial-calendar" target="_blank" rel="noopener">TSMC IR calendar: October monthly sales</a></li><li><a href="https://www.mof.gov.tw/eng/singlehtml/6642?cntId=7ccdf37a317b4f7da3716dc263f28feb" target="_blank" rel="noopener">Taiwan MOF: October trade announcement</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #33 · Nov 8, 2026</span></div>
+</body>
+</html>
