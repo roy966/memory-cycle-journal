@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Tue Nov 10, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Tuesday, November 10, 2026</span><span>Vol. I · No. 35 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of ~08:40 IST · Korea close (KRX 15:30 KST) · US: Monday closes · Spot: TrendForce Nov 10 11:00 GMT+8</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-11-10.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>KOREA TUESDAY — CLOSE</b><span class="big">KOSPI 5,239.13</span>+4.39%; Samsung ₩198,900 +4.74% · SK hynix ₩1,212,000 +6.69% · KRX via Naver</div>
+    <div><b>MICRON (MON CLOSE) · DRAM SPOT TUESDAY</b><span class="big">$733.15</span>+6.25%; DDR5 16Gb $60.167 (0.00%); DDR4 16Gb $79.99 (−0.31%) · TrendForce Nov 10 11:00 GMT+8</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Korea · US Monday · TrendForce</div>
+  <h1 class="lead"><a href="https://www.chinatimes.com/realtimenews/20261110002433-260410" target="_blank" rel="noopener">Memory Stocks Snap Back as TrendForce Sees a 2027 Server-DRAM Gap</a></h1>
+  <p class="deck">The SOX gained 6.85% on Monday and Micron 6.25%; in Seoul SK hynix closed +6.69% as foreigners bought for the first time in eight sessions. TrendForce says 2027 server DRAM supply grows about 25%, slower than server CPU demand, though DRAM lead times eased a week to 18. Spot edged lower again.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~08:40 IST Tuesday (UTC+2) · Korea = final close · US = Monday close · Spot TrendForce Nov 10 11:00 GMT+8 · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · Korea Tuesday close · US Monday close · Spot Tuesday</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Korea, Tuesday close</td></tr>
+        <tr><td>KOSPI</td><td class="n">5,239.13 (+4.39%)</td></tr>
+        <tr><td>Samsung</td><td class="n">₩198,900 (+4.74%)</td></tr>
+        <tr><td>SK hynix</td><td class="n">₩1,212,000 (+6.69%)</td></tr>
+        <tr><td>KOSPI Mon final (revised)</td><td class="n">5,018.85 (−0.81%)</td></tr>
+        <tr><td>TSMC Oct revenue</td><td class="n">NT$586.9bn (+59.7% y/y)</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">US Monday closes and spot</td></tr>
+        <tr><td>Micron</td><td class="n">$733.15 (+6.25%)</td></tr>
+        <tr><td>Sandisk</td><td class="n">$886.51 (+6.16%)</td></tr>
+        <tr><td>SOX</td><td class="n">10,033.93 (+6.85%)</td></tr>
+        <tr><td>Nvidia</td><td class="n">$178.67 (−4.27%)</td></tr>
+        <tr><td>DDR5 16Gb spot</td><td class="n">$60.17 (0.00%)</td></tr>
+        <tr><td>DDR4 16Gb spot</td><td class="n">$79.99 (−0.31%)</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: the equity rebound was broad (SK hynix ADR +5.53%, Applied Materials +11.37%), but Nvidia fell on its CEO probe. DRAM spot did not join the rally: DDR5 flat, DDR4 down a fourth session. NAND wafer spot ($16.15, −4.33% w/w) is carried from the last weekly print. Monday’s KOSPI final (5,018.85) revises No. 34’s preliminary 5,019.78. Sources: KRX via Naver Finance, Yonhap, Yahoo Finance, FnNews, TSMC, TrendForce.</div>
+  </aside>
+
+  <p>The KOSPI opened 4.55% higher at 5,247.22 and touched 5,300.92 (+5.62%) before easing; buy-side sidecars were triggered on the KOSPI at 09:06 and the KOSDAQ at 09:10 KST. By 10:32 KST foreigners were net buyers for the first time in eight sessions, after selling an average ₩1.79 trillion a day over the previous seven (Yonhap). Daishin’s Lee Kyung-min said data-center permit delays “may slow the pace of investment execution, but will not directly lead to a decrease in the total volume” of AI spending (MoneyToday). On Wall Street, AMD rose 13.26% and Broadcom 8.78%; Nvidia closed at $178.67 after a low of $170.24.</p>
+  <p>The fundamentals news came from TrendForce. Analyst Hsu Chia-yuan expects 2027 server CPU shipments to rise at least 30% (base case 40–45%), against server DRAM bit supply growth of about 25%; even counting SOCAMM, supply grows only 35–40%. Total DRAM bit supply growth slows from 31% in 2026 to 24% in 2027 as node-migration gains fade, then recovers above 25% in 2028 as new fabs open. Server DRAM plus HBM reaches 65% of DRAM supply by end-2027, squeezing other applications (China Times). Its weekly survey put DRAM lead times at 18 weeks (from 19), eSSD at 16 (balance 8) and ABF substrates at 48–56 (balance 12). US hyperscalers’ server-DRAM demand is firm, while Chinese CSPs are trimming high-capacity RDIMM purchases (Digital Times).</p>
+  <p><b>Our call:</b> late upcycle; tight through 2027 / into 2028. Unchanged overall. Supply evidence is a touch tighter (TrendForce’s 2027 server-DRAM gap, EUV scarcity), while price momentum is a touch softer (DDR4 spot down again, lead times one week shorter). <span class="tag inv">Cycle signal: stocks rebound; spot still soft</span></p>
+
+  <article class="story">
+    <div class="kicker">Capex · Lithography</div>
+    <h2><a href="https://www.trendforce.com/news/2026/11/10/news-samsung-sk-hynix-reportedly-race-for-asml-euv-amid-2027-2028-shortages-orders-worth-up-to-krw-20t-each/" target="_blank" rel="noopener">Samsung and SK Hynix Race for ASML EUV Tools</a></h2>
+    <p>Samsung and SK hynix are each committing ₩10–20 trillion to ASML EUV scanners and may order earlier than planned because tool lead times have reportedly doubled, according to Solution News, cited by TrendForce. SK hynix has disclosed an EUV purchase of about ₩11.95 trillion, for delivery by Dec. 31, 2027, to move to 1c DRAM. Samsung is adding 1c lines for HBM4 at Pyeongtaek P4. It has ordered lithography tools for P5, whose first fab is targeted for 2028; equipment moves in after the first-phase cleanroom is finished in the first half of 2027. Both plan 1d DRAM in 2027 and limited sub-10nm “0a” output in 2028, with High-NA EUV on one or two layers. ASML said in October that its supply will fall short of demand in 2027 and 2028; memory was 46% of its Q3 system sales (TrendForce, Nov 10).</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Taiwan · Monthly data</div>
+    <h2><a href="https://pr.tsmc.com/english/news/3349" target="_blank" rel="noopener">TSMC and Taiwan Exports Set Records; Nanya’s Monthly Gain Slows to 3%</a></h2>
+    <p>TSMC’s October revenue was NT$586.89 billion, up 14.7% from September and 59.7% from a year earlier (TSMC). Taiwan’s October exports hit a record US$96.76 billion, up 58.9%, with integrated circuits up 63.0% to $31.17 billion (Ministry of Finance). Nanya Technology’s October revenue was a 12th straight monthly record at NT$46.48 billion, up 487.7% year on year but only 3.07% from September (Anue). MediaTek’s October sales were not out at press time.</p>
+  </article>
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Nov 9, 08:00 IST</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Memory at 3× 2028 earnings.</b> Cantor calls the selloff a mid-cycle correction and says buy the dip. The SOX is 38% below its late-June peak and memory stocks 57%. On CY28 consensus EPS the SOX trades at 9× and memory at 3×. Top picks include Micron, Sandisk, WDC and Seagate. <span class="src">Cantor semis (Nov 9)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Near book value.</b> Goldman says memory stocks trade near 1.0× tangible book, with Samsung and SK hynix below total book; it sees Micron (Neutral) as more attractive on free cash flow. About 35 GW of 2027 US data-center additions look low-risk. <span class="src">Goldman Sachs Americas semis (Nov 9)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Tool orders say DRAM capex keeps rising.</b> Kokusai booked ~¥167bn of 2Q orders (+288% y/y) against an ¥80bn guide. It sees WFE of at least $140bn in 2026 (DRAM +40%, NAND +25%) and at least $190bn in 2027. Korean back-end tools are booked two to three years out. Onto’s Advanced Nodes revenue was $135M, 60% of it memory. <span class="src">Jefferies Asia morning TMT (Nov 10); Jefferies, Cantor on Onto (Nov 9)</span></div>
+  <div class="brief"><span class="tag">Bear</span> <b class="h">Too early to bottom-fish.</b> Jefferies Europe warns DDR5 spot is at risk from data-center delays plus weak PCs and smartphones. A separate Jefferies note flags “Semi Tsunami follows Blue Tsunami”: GPU oversupply could get worse. <span class="src">Jefferies (Nov 9)</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since Mon ~08:00 · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@pequityresearch</span> · Nov 10 03:55<br>Relays a Morgan Stanley note: memory risk-reward is “very favorable even with land/power/shell risks”; multiple compression offers “very compelling upside”; upturn cash goes to buybacks.<a class="src" href="https://x.com/pequityresearch/status/2119972131551297796">x.com/…/2119972131551297796</a></li>
+    <li><span class="handle">@jukan05</span> · Nov 10 05:35<br>A Taiwanese media report says Nvidia may cut TSMC orders, with AMD and ASIC makers taking freed capacity; he has “heard similar rumors.” <span class="tag">Unconfirmed</span><a class="src" href="https://x.com/jukan05/status/2119997381198721234">x.com/…/2119997381198721234</a></li>
+    <li><span class="handle">@SemiAnalysis_</span> · Nov 9 18:00<br>CXMT is talking up its 4F² DRAM roadmap again; its first 4F² DDR5 RDIMMs are targeted for sampling by year-end.<a class="src" href="https://x.com/SemiAnalysis_/status/2119822428457030080">x.com/…/2119822428457030080</a></li>
+    <li><span class="handle">@SemiAnalysis_</span> · Nov 10 07:28<br>HBM5 doubles bandwidth on the same pins; the PHY can run at over 4× HBM4E power, so suppliers add a thermal “chimney.”<a class="src" href="https://x.com/SemiAnalysis_/status/2120025703294894487">x.com/…/2120025703294894487</a></li>
+    <li><span class="handle">@antfeedapp</span> · Nov 9 12:31<br>DRAMeXchange/Hana charts: 512Gb TLC spot fell from ~$23 to $16 and 1Tb TLC/QLC from ~$32 to $26, while DDR4/DDR5 spot stays elevated.<a class="src" href="https://x.com/antfeedapp/status/2119739555612180893">x.com/…/2119739555612180893</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Supply a touch tighter; spot a touch softer</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Nov 9 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>No new public contract print (October posted Oct 30). Nanya Oct revenue +3.07% m/m, a 12th record but slowing. Winbond: Q4 still rising, slower</td><td class="n">Rising, slower</td></tr>
+    <tr><td><b>Spot vs contract</b></td><td>DDR5 16Gb $60.17 (0.00%); DDR4 16Gb $79.99 (−0.31%), 8Gb $45.00 (−0.47%). NAND wafer $16.15 (−4.33% w/w) carry</td><td class="n">Softer</td></tr>
+    <tr><td><b>Lead times / LTAs</b></td><td>TrendForce DRAM lead time 18 weeks (from 19; balance 8); eSSD 16 (balance 8). Chinese CSPs trim RDIMM buys; US firm</td><td class="n">Long, a week shorter</td></tr>
+    <tr><td><b>Supply growth / capex</b></td><td>TrendForce: DRAM bits +24% in 2027 (from +31%); server DRAM ~+25% vs CPUs +40–45%. EUV race ₩10–20T each, P5 in 2028. CXMT 4F² sampling by year-end</td><td class="n">Tight 2027; builds 2028+</td></tr>
+    <tr><td><b>Valuation</b></td><td>Cantor: memory 3× CY28 EPS, −57% from peak. Goldman: ~1.0× tangible book; Samsung and SK hynix below book. Kokusai: 2026 DRAM WFE +40%</td><td class="n">Trough-like</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict vs previous call (No. 34, Nov 9)</b><br>Late upcycle; tight through 2027 and into 2028. Unchanged overall. Supply evidence is a touch tighter: TrendForce sees 2027 DRAM bit growth slowing to 24%, with server DRAM short of CPU demand, and EUV tools are now a bottleneck for 2027–28 capacity. Price momentum is a touch softer: DDR4 spot fell for another session and DRAM lead times shortened by a week. The equity rebound (SOX +6.85%, Korea’s first foreign buying in eight sessions) is about positioning and valuation, not a change in the cycle.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Nov 10–24 · Israel time (IST, UTC+2) · US cash open 16:30</span></div>
+  <table class="ev">
+    <tr><td class="dt">Tue Nov 10</td><td>MediaTek Oct sales · Infineon Q4/FY (European morning) · US CPI 15:30 · Cohu investor day · SEMICON Europe · Cantor Convergence (Nov 10–12) · CoreWeave after the close</td><td class="st">AI</td></tr>
+    <tr><td class="dt">Wed Nov 11</td><td>Korea Nov 1–10 exports · Veterans Day: US equities open, bond market closed</td><td class="st">Korea</td></tr>
+    <tr><td class="dt">Thu Nov 12</td><td>Nebius before the open · Hon Hai results · Applied Materials, Cisco and SMIC after the close</td><td class="st">WFE</td></tr>
+    <tr><td class="dt">Fri Nov 13</td><td>Advantest results · US PPI 15:30</td><td class="st">Test</td></tr>
+    <tr><td class="dt">Tue Nov 17</td><td>Nvidia FQ3 (call 00:00 Nov 18) · SC26 Nov 17–19</td><td class="st">HBM</td></tr>
+    <tr><td class="dt">Wed Nov 18</td><td>House chairs’ requested closed-door Huang briefing · Kulicke &amp; Soffa (est.) and Soitec after the close</td><td class="st">Policy</td></tr>
+    <tr><td class="dt">Thu Nov 19–20</td><td>Sandisk 8-for-1 split effective after Nov 19 close; split-adjusted Nov 20 · Anthropic IPO targeted (WSJ via Yonhap)</td><td class="st">NAND</td></tr>
+    <tr><td class="dt">Mon Nov 23–24</td><td>HPE results · Jefferies EM conference, Dubai · Watch: TrendForce NAND weekly and month-end contract prices</td><td class="st">Prices</td></tr>
+  </table>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://m.stock.naver.com/domestic/index/KOSPI/total" target="_blank" rel="noopener">KRX via Naver Finance: KOSPI, Samsung, SK hynix close (Nov 10, 15:30 KST)</a></li><li><a href="https://www.yna.co.kr/view/AKR20261110070800008" target="_blank" rel="noopener">Yonhap: KOSPI rebounds, foreigners buy for first time in 8 sessions (Nov 10, 10:47 KST)</a></li><li><a href="https://www.mt.co.kr/en/stock/2026/11/10/2026111011021482868" target="_blank" rel="noopener">MoneyToday: Samsung and SK hynix surge, buy-sidecar triggered (Nov 10)</a></li><li><a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=8708257" target="_blank" rel="noopener">KBS: KOSPI closed −0.81% on Monday (Nov 10)</a></li><li><a href="https://finance.yahoo.com/quote/%255ESOX/history/" target="_blank" rel="noopener">Yahoo Finance: PHLX Semiconductor (SOX) history</a></li><li><a href="https://en.fnnews.com/news/202611100624351093" target="_blank" rel="noopener">FnNews: New York stocks close; Micron, SK hynix ADR (Nov 9)</a></li><li><a href="https://exa.ai/library/markets/stock/MU?date=2026-11-09&amp;view=daily" target="_blank" rel="noopener">Exa market data: Micron, Sandisk, Nvidia Nov 9 closes</a></li><li><a href="https://www.chinatimes.com/realtimenews/20261110002433-260410" target="_blank" rel="noopener">China Times: TrendForce sees 2027 server DRAM gap (Nov 10)</a></li><li><a href="https://www.dt.co.kr/article/12094159" target="_blank" rel="noopener">Digital Times: TrendForce weekly lead times, DRAM 18 weeks (Nov 10)</a></li><li><a href="https://www.trendforce.com/news/2026/11/10/news-samsung-sk-hynix-reportedly-race-for-asml-euv-amid-2027-2028-shortages-orders-worth-up-to-krw-20t-each/" target="_blank" rel="noopener">TrendForce: Samsung, SK hynix race for ASML EUV (Nov 10)</a></li><li><a href="https://www.trendforce.com/price/dram/dram_spot" target="_blank" rel="noopener">TrendForce DRAM spot prices (Nov 10 11:00 GMT+8)</a></li><li><a href="https://www.trendforce.com/price/flash/flash_spot" target="_blank" rel="noopener">TrendForce NAND flash and wafer spot prices</a></li><li><a href="https://pr.tsmc.com/english/news/3349" target="_blank" rel="noopener">TSMC: October 2026 revenue report</a></li><li><a href="https://www.mof.gov.tw/eng/singlehtml/f48d641f159a4866b1d31c0916fbcc71?cntId=25f99a5315f04f15a626000b148eb28d" target="_blank" rel="noopener">Taiwan Ministry of Finance: October 2026 exports and imports</a></li><li><a href="https://focustaiwan.tw/business/202611090020" target="_blank" rel="noopener">Focus Taiwan: October exports hit record (Nov 9)</a></li><li><a href="https://news.cnyes.com/news/id/6645639" target="_blank" rel="noopener">Anue: Nanya October revenue NT$46.48bn</a></li><li><a href="https://www.koreajoongangdaily.com/business/no-permanent-friends-nvidias-twotrack-play-may-reduce-korean-chipmakers-to-subcontractors/12963911" target="_blank" rel="noopener">Korea JoongAng Daily: Nvidia&#x27;s TSMC push and Korean HBM makers (Nov 10)</a></li><li><a href="https://www.digitimes.com/news/a20261109VL201/2026-competition-dram-cxmt-packaging.html" target="_blank" rel="noopener">DIGITIMES: weekly roundup incl. CXMT 3Q26 and 4F² DRAM</a></li><li><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener">Nvidia: FQ3 conference call (Nov 17)</a></li><li><a href="https://www.fidelity.com/learning-center/smart-money/stock-market-holidays" target="_blank" rel="noopener">Fidelity: 2026 stock-market holidays (Veterans Day equities open)</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #35 · Nov 10, 2026</span></div>
+</body>
+</html>
