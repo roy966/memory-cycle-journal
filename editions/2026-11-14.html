@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Sat Nov 14, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Saturday, November 14, 2026</span><span>Vol. I · No. 39 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data as of ~08:20 IST · US: Friday closes · No Korea session (Friday close in No. 38) · Spot: TrendForce Nov 13 18:10 GMT+8</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-11-14.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>US FRIDAY — A SECOND DAY OF SELLING</b><span class="big">SOX −3.43%</span>10,146.32; Micron $778.31 −2.52% · Sandisk $885.01 −5.59% · Nvidia $162.85 −2.01% · AMD −8.75% · Yahoo Finance, Reuters</div>
+    <div><b>THE WEEK · DRAM SPOT</b><span class="big">Micron +12.8%</span>on the week; SOX +8.1%, Nvidia −12.7% · DDR5 16Gb $60.27 (+0.06%) · DDR4 16Gb $79.50 (−0.31%) · Yahoo Finance, TrendForce</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Markets · Nvidia · HBM</div>
+  <h1 class="lead"><a href="https://www.investing.com/news/stock-market-news/neoclouds-ai-stocks-slide-again-as-nvidia-turmoil-rattles-sector-5026205" target="_blank" rel="noopener">Chip Stocks Slide Again on AI-Financing Fears, but Korea Says Its HBM Is Already Spoken For</a></h1>
+  <p class="deck">The SOX fell 3.4% on Friday as investors weighed Nvidia’s role as a financier of the AI build-out without Jensen Huang. Sandisk lost 5.6% and Micron 2.5%. In Seoul, analysts and industry officials argue that long-term contracts cover the next two years and that a wider customer base could strengthen memory makers’ hand.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~08:20 IST Saturday (UTC+2) · US = Friday close · Spot TrendForce Nov 13 18:10 GMT+8 · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · US Friday close · week · spot Friday</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">US, Friday close</td></tr>
+        <tr><td>Micron</td><td class="n">$778.31 (−2.52%)</td></tr>
+        <tr><td>Sandisk</td><td class="n">$885.01 (−5.59%)</td></tr>
+        <tr><td>SK hynix ADR</td><td class="n">$131.79 (−4.30%)</td></tr>
+        <tr><td>SOX</td><td class="n">10,146.32 (−3.43%)</td></tr>
+        <tr><td>Nvidia</td><td class="n">$162.85 (−2.01%)</td></tr>
+        <tr><td>Applied Materials</td><td class="n">$370.50 (−2.74%)</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">Week and spot</td></tr>
+        <tr><td>Micron, week</td><td class="n">+12.8%</td></tr>
+        <tr><td>SOX, week</td><td class="n">+8.1%</td></tr>
+        <tr><td>Nvidia, week</td><td class="n">−12.7%</td></tr>
+        <tr><td>WDC / Seagate</td><td class="n">−5.00% / −3.09%</td></tr>
+        <tr><td>DDR5 16Gb spot</td><td class="n">$60.27 (+0.06%)</td></tr>
+        <tr><td>DDR4 16Gb spot</td><td class="n">$79.50 (−0.31%)</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: rivals that rallied on Thursday gave it back on Friday (AMD −8.75%, Broadcom −4.76%), while memory still ended a volatile week higher. DDR5 spot ticked up after three flat sessions; DDR4 kept easing (16Gb eTT −0.96%). NAND wafer spot ($16.15) is still the Nov 2 print. Weekly changes are desk arithmetic from Friday-to-Friday closes. Sources: Yahoo Finance, Reuters via Investing.com, TrendForce.</div>
+  </aside>
+
+  <p>Shares of AI-related companies fell again on Friday, with neoclouds hit hardest, as investors worried about financing after Huang’s exit, Reuters reported. “It’s a short-term death blow to the industry because the amount of vendor financing and financing guarantees that Nvidia and Jensen Huang stepped into are now over,” said Thomas Hayes of Great Hill Capital. Nebius closed down 9.9%, CoreWeave 6.1% and Dell 7.2%; Western Digital fell 5.0%. The FT reported that Nvidia’s board had approached Arm CEO Rene Haas about the job <span class="tag">Reported</span>; CNBC said the board has not yet picked a search firm. Over the week, the SOX still rose 8.1% and Micron 12.8%, while Nvidia fell 12.7%.</p>
+  <p>Korean coverage stressed that existing contracts are intact. SK hynix has said its DRAM and HBM capacity is effectively sold out through 2029, with long-term agreements (LTAs) with 14 major customers; Samsung says its 2027 HBM capacity is fully booked (Korea JoongAng Daily). Daishin Securities estimates SK hynix supplies 55% of Nvidia’s HBM4 this year, Samsung 28% and Micron 17%. “A more diversified customer base could actually strengthen memory suppliers’ bargaining power,” Mirae Asset’s Kim Young-gun wrote. The risk is further out: LTAs could be revised if Nvidia’s schedules change from 2027, and Korean press says SK hynix could face more pricing pressure while Samsung gains from a broader customer mix (via TrendForce).</p>
+  <p><b>Our call:</b> late upcycle; tight through 2027 / into 2028. Unchanged overall: contracts and prices steady, sentiment looser on AI financing. <span class="tag inv">Cycle signal: fundamentals steady, multiples under pressure</span></p>
+
+  <article class="story">
+    <div class="kicker">HBM · Forecasts</div>
+    <h2><a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202611130089" target="_blank" rel="noopener">Hana Sees 2027 HBM Demand About 10% Above Supply, With Samsung Taking the Revenue Lead</a></h2>
+    <p>Hana Securities forecasts 2027 HBM shipments from the three makers at 4.9 billion GB: SK hynix 2.3 billion (47%), Samsung 2.0 billion (41%) and Micron 0.6 billion (12%), Korea Economic TV reported on Nov 13. It expects Samsung to lead on revenue because its HBM4 for Nvidia’s Rubin, built on 1c DRAM with a 4nm base die, carries a higher price, while SK hynix’s large LTA volumes limit its price increases. Monthly HBM wafer capacity rises from 200k to 260k at SK hynix, 190k to 260k at Samsung and 60k to 80k at Micron. Demand from accelerators (Nvidia 8.96 million GPUs, Google 8.80 million TPUs, AMD 0.97 million, Meta and Amazon ASICs above 4 million) adds up to about 5.5 billion GB. An industry official put the balance after the second half of 2028. Hana cut its targets to ₩400,000 for Samsung and ₩2.8 million for SK hynix on sector de-rating (Newspim).</p>
+  </article>
+  <article class="story">
+    <div class="kicker">Legal · DRAM</div>
+    <h2><a href="https://www.mlex.com/mlex/amp/articles/2550177" target="_blank" rel="noopener">Memory Makers Tell a US Judge the Price Spike Came From AI Demand, Not a Conspiracy</a></h2>
+    <p>Lawyers for SK hynix, Samsung and Micron argued in San Jose on Friday that a US lawsuit accusing them of restricting supply and fixing DRAM prices describes “lawful oligopoly conduct,” MLex reported; their case is that the AI boom, not a conspiracy, moved the market. Judge Noël Wise took the motion to dismiss under submission; a written ruling will follow. Separately, TrendForce said Nvidia’s supply chain had shown no significant order cuts so far, though it expects AMD and in-house ASIC servers to gain share in 2027.</p>
+  </article>
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Fri ~08:30 IST · Read-only</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Applied sees into 2029.</b> 2027 equipment spending guided up at least 30%, led by leading-edge logic and DRAM. Fab trackers, record utilization and a lack of cleanroom space give visibility into 2029; system output is to double by FY28. Supply-chain pinch points modestly hurt the January-quarter guide. Target cut on sector de-rating, not numbers. <span class="src">Cantor (Nov 13)</span></div>
+  <div class="brief"><span class="tag">Policy</span> <b class="h">Tool controls back on the table.</b> Huang’s troubles appear to be hardening Washington’s view on China, making the MATCH Act more likely; lawmakers may attach chip bills to the year-end defense bill. Passed as drafted, the broker puts the hit at about 15% of ASML revenue. <span class="src">Jefferies European semis (Nov 13)</span></div>
+  <div class="brief"><span class="tag">Financing</span> <b class="h">Less help from Nvidia.</b> Interim CEO Kress is expected to offer customers less financial support (The Information), and Bloomberg reports the $500bn bank-financing plan has no deals yet, both relayed by the Jefferies desk. <span class="src">Jefferies sales desk (Nov 13)</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since Fri ~08:30 · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@pequityresearch</span> · Nov 13 22:41<br>Relays KSIA’s Ahn: Huang’s exit could give memory makers more leverage. “To change suppliers, Nvidia needs alternatives. But where are those alternatives?”<a class="src" href="https://x.com/pequityresearch/status/2121342588070363514">x.com/…/2121342588070363514</a></li>
+    <li><span class="handle">@aleabitoreddit</span> · Nov 13 22:25<br>Quotes an unnamed Korean memory executive: “Thirty people are already lined up at a restaurant that is full, and five of them leaving does not create a table.” <span class="tag">Opinion</span><a class="src" href="https://x.com/aleabitoreddit/status/2121338681571328368">x.com/…/2121338681571328368</a></li>
+    <li><span class="handle">@SKundojjala</span> · Nov 13 12:58<br>Applied Materials: advanced packaging to grow 90% in 2026, mostly HBM; leading-edge logic, DRAM and packaging ~75% of WFE growth through 2030.<a class="src" href="https://x.com/SKundojjala/status/2121196056964935876">x.com/…/2121196056964935876</a></li>
+    <li><span class="handle">@JJoonWick</span> · Nov 13 11:51<br>SK Securities forward P/E: Samsung 3.3×, SK hynix 2.7×; Micron 4.6× and CXMT 10.6× (estimate bases differ).<a class="src" href="https://x.com/JJoonWick/status/2121179247452852311">x.com/…/2121179247452852311</a></li>
+    <li><span class="handle">@trendforce</span> · Nov 13 16:03<br>OCP 2026: SK hynix (MARS, HBF) and Solidigm (shared SSD KV-cache pool) push AI memory beyond a single HBM tier.<a class="src" href="https://x.com/trendforce/status/2121242504339087812">x.com/…/2121242504339087812</a></li>
+    <li><span class="handle">@GavinSBaker</span> · Nov 14 02:34<br>Atreides sent a letter to Nvidia’s board; he also backs a petition to reinstate Huang. <span class="tag">Opinion</span><a class="src" href="https://x.com/GavinSBaker/status/2121401397346521412">x.com/…/2121401397346521412</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Fundamentals steady; sentiment looser on AI financing</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Nov 13 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>No new contract data. Enterprise DRAM/SSD hikes still verbal; PC DRAM 4Q26 +13–18%, eSSD +15–20% (TrendForce)</td><td class="n">Rising, unchanged</td></tr>
+    <tr><td><b>Spot vs contract</b></td><td>DDR5 16Gb $60.267 (+0.06%), first uptick after three flat sessions; DDR4 16Gb $79.50 (−0.31%), eTT −0.96%. NAND wafer print still Nov 2</td><td class="n">Flat / DDR4 easing</td></tr>
+    <tr><td><b>Inventory / demand</b></td><td>LTAs intact: SK hynix sold out through 2029, Samsung 2027 HBM booked. Hana: 2027 HBM demand ~10% above supply. Nvidia financing pullback feared (neoclouds −6–10%)</td><td class="n">Amber, steady</td></tr>
+    <tr><td><b>Supply growth / capex</b></td><td>AMAT: visibility into 2029, cleanroom-gated. MATCH Act odds up (tool curbs on China). Hana: HBM wafer capacity +30% at SK hynix and +37% at Samsung in 2027</td><td class="n">Tight, unchanged</td></tr>
+    <tr><td><b>Valuation</b></td><td>SOX −3.43%, MU −2.52%, SNDK −5.59% Friday, but MU +12.8% on the week. SK hynix at 2.7× forward P/E (SK Securities)</td><td class="n">Volatile</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict vs previous call (No. 38, Nov 13)</b><br>Late upcycle; tight through 2027 and into 2028. Unchanged overall. Fundamentals are steady: LTAs hold, Hana sees 2027 HBM demand about 10% above supply with balance only after 2H28, and DDR5 spot ticked up. Sentiment is looser: a second day of AI-hardware selling priced the loss of Nvidia’s vendor financing, which is a demand-quality risk for 2028 rather than a 2027 volume risk. Policy is a touch tighter for China supply (MATCH Act). Top playbook signal (DDR5 spot falling while contract rises) has not appeared.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Nov 14–Dec 3 · Israel time (IST, UTC+2) · US cash open 16:30</span></div>
+  <table class="ev">
+    <tr><td class="dt">Tue Nov 17</td><td>Nvidia FQ3, first under interim CEO Kress (release ~23:20, call 00:00 Nov 18) · SC26 Nov 17–19</td><td class="st">HBM</td></tr>
+    <tr><td class="dt">Nov 18–20</td><td>Anthropic IPO pricing (18th), Nasdaq debut (19th) · Trump at APEC Shenzhen (18–19) · Modine analyst day (18th) · Sandisk split-adjusted trading from Nov 20</td><td class="st">Demand</td></tr>
+    <tr><td class="dt">Nov 23–26</td><td>Korea Nov 1–20 exports (~23rd) · US PCE (25th) · US markets closed for Thanksgiving (26th); Huang testimony reported due before then</td><td class="st">Exports</td></tr>
+    <tr><td class="dt">Nov 30–Dec 3</td><td>TrendForce month-end contract prices · House interviews of Huang (Dec 1) and Nvidia’s general counsel (Dec 2); Commerce export-control hearing (Dec 3)</td><td class="st">Policy</td></tr>
+    <tr><td class="dt">Pending</td><td>Ruling on the DRAM price-fixing motion to dismiss (no date) · Samsung–Modine talks (unconfirmed) · NDAA chip-bill attachments</td><td class="st">Legal</td></tr>
+  </table>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://www.investing.com/news/stock-market-news/neoclouds-ai-stocks-slide-again-as-nvidia-turmoil-rattles-sector-5026205" target="_blank" rel="noopener">Reuters via Investing.com: Neoclouds, AI stocks slide again as Nvidia turmoil rattles sector (Nov 13)</a></li><li><a href="https://finance.yahoo.com/quote/%5ESOX/history/" target="_blank" rel="noopener">Yahoo Finance: SOX price history (Nov 13 close)</a></li><li><a href="https://www.morningstar.com/news/marketwatch/20261113202/amd-and-other-chip-stocks-slide-as-wall-street-rethinks-the-ai-trade-without-jensen-huang" target="_blank" rel="noopener">MarketWatch via Morningstar: AMD and other chip stocks slide (Nov 13)</a></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/ai-chip-stocks-finish-down-213620910.html" target="_blank" rel="noopener">Forbes via Yahoo Finance: AI chip stocks finish down (Nov 13)</a></li><li><a href="https://www.cnbc.com/2026/11/13/nvidia-huang-ceo-replacement-search.html" target="_blank" rel="noopener">CNBC: Nvidia CEO search (Nov 13)</a></li><li><a href="https://www.koreajoongangdaily.com/business/jensen-huangs-exit-clouds-future-nvidia-demand-for-korean-chipmakers/12970507" target="_blank" rel="noopener">Korea JoongAng Daily: Jensen Huang&#x27;s exit clouds future Nvidia demand (Nov 13)</a></li><li><a href="https://www.trendforce.com/news/2026/11/13/news-nvidia-without-huang-new-tests-ahead-as-amd-eyes-gains-tsmc-finds-a-cushion-and-memory-giants-weigh-risks/" target="_blank" rel="noopener">TrendForce: NVIDIA without Huang — memory giants weigh risks (Nov 13)</a></li><li><a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202611130089" target="_blank" rel="noopener">Korea Economic TV: Hana 2027 HBM forecast (Nov 13)</a></li><li><a href="https://www.newspim.com/news/view/20261112001134" target="_blank" rel="noopener">Newspim: Hana target cuts (Nov 12)</a></li><li><a href="https://www.mlex.com/mlex/amp/articles/2550177" target="_blank" rel="noopener">MLex: AI boom, not conspiracy, affected DRAM market (Nov 13)</a></li><li><a href="https://www.docketbird.com/court-cases/Garciaguirre-et-al-v-Samsung-Electronics-Co-Ltd-et-al/cand-5:2026-cv-06345" target="_blank" rel="noopener">DocketBird: Garciaguirre v. Samsung, 5:26-cv-06345</a></li><li><a href="https://www.trendforce.com/price/dram/dram_spot" target="_blank" rel="noopener">TrendForce DRAM spot (Nov 13 18:10 GMT+8)</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #39 · Nov 14, 2026</span></div>
+</body>
+</html>
