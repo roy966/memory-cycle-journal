@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Memory Cycle Journal — Fri Nov 27, 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media screen { a:hover{text-decoration:underline}
+ .nav{font-family:"Libre Franklin",sans-serif;font-size:12px;text-align:center;margin:8px 0;letter-spacing:.08em;text-transform:uppercase}
+ .nav a{margin:0 10px;color:#111}}
+</style>
+<style>
+@page { size: A4 portrait; margin: 0.45in 0.6in 0.55in;
+  @bottom-left { content: "The Memory Cycle Journal"; font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "Libre Franklin", Arial, sans-serif; color: #777; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Source Serif Pro", "Source Serif 4", Georgia, serif; color: #111; font-size: 11pt; line-height: 1.35;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #0b5ea8; text-decoration: none; }
+h1 a, h2 a, h3 a { color: inherit; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+.sans, .kicker, .byline, .src, .tag, .sec-h, .databar, table.d, table.ev, .verdict, .foot, figcaption, .nav-sec { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+
+/* ---------- MASTHEAD (wsj.com header) ---------- */
+.topline { display: flex; justify-content: space-between; font-size: 7.8pt; color: #555; letter-spacing: .02em;
+  font-family: "Libre Franklin", Arial, sans-serif; border-bottom: 0.5pt solid #ccc; padding-bottom: 3pt; }
+.title { text-align: center; font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 30pt; letter-spacing: -0.3pt; line-height: 1.05; margin: 6pt 0 6pt; }
+.nav-sec { display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 10pt; border-top: 0.5pt solid #111; border-bottom: 2.5pt solid #111;
+  padding: 5pt 0 4pt; font-size: 7.1pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.nav-sec a { color: #111; }
+.rule2 { height: 0; }
+.databar { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 0.5pt solid #ccc; margin: 0 0 4pt; font-size: 8.4pt; line-height: 1.35; color: #333; }
+.databar > div { padding: 5pt 10pt 5pt 0; }
+.databar > div + div { border-left: 0.5pt solid #ccc; padding-left: 10pt; }
+.databar b { display: block; font-size: 7.4pt; letter-spacing: .08em; color: #111; }
+.databar .big { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17pt; color: #111; line-height: 1.1; margin-right: 4pt; }
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-h { font-size: 9.5pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; border-top: 3pt solid #111;
+  padding-top: 4pt; margin: 12pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+.sec-h span { font-weight: 500; color: #666; letter-spacing: .06em; }
+.kicker { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b5ea8; margin: 0 0 4pt; break-after: avoid; }
+
+/* ---------- ARTICLES ---------- */
+h1.lead { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1.08; letter-spacing: -0.2pt; margin: 0 0 7pt; break-after: avoid; }
+.deck { font-size: 12.5pt; line-height: 1.33; color: #444; margin: 0 0 8pt; break-after: avoid; }
+.byline { font-size: 8.5pt; color: #555; margin: 0 0 10pt; padding-bottom: 7pt; border-bottom: 0.5pt solid #ddd; }
+.byline b { color: #111; }
+h2 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 19pt; line-height: 1.15; margin: 0 0 6pt; break-after: avoid; }
+h3 { font-family: "Newsreader", "Source Serif Pro", Georgia, serif; font-weight: 700; font-size: 14.5pt; line-height: 1.2; margin: 0 0 6pt; break-after: avoid; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.story { border-top: 0.5pt solid #ccc; padding-top: 9pt; margin-top: 9pt; }
+.pull { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 14pt; line-height: 1.3; border-left: 3pt solid #111;
+  padding: 1pt 0 1pt 11pt; margin: 9pt 0 10pt; break-inside: avoid; }
+.pull .src { display: block; font-style: normal; margin-top: 3pt; }
+.src { font-size: 8pt; color: #666; letter-spacing: .01em; line-height: 1.35; }
+.tag { font-size: 6.8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 0.6pt solid #888; color: #444; padding: 0.5pt 3pt; border-radius: 2pt; white-space: nowrap; vertical-align: 1pt; }
+.tag.inv { background: #0b5ea8; border-color: #0b5ea8; color: #fff; }
+figure { margin: 0 0 10pt; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.8pt; color: #666; margin-top: 3pt; }
+.story { display: flow-root; }
+.story figure { float: right; width: 2.6in; margin: 2pt 0 4pt 14pt; }
+.story figure img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- KEY NUMBERS SIDEBAR ---------- */
+.numbers { border-top: 3pt solid #111; background: #f5f5f2; padding: 5pt 10pt 6pt; margin: 0 0 12pt; break-inside: avoid; }
+.ngrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+.numbers .kicker { color: #111; margin-bottom: 2pt; }
+table.d { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; }
+table.d tr { break-inside: avoid; }
+table.d td, table.d th { border-bottom: 0.4pt solid #d6d6d0; padding: 2.2pt 0; vertical-align: top; text-align: left; }
+table.d td.n { text-align: right; white-space: nowrap; font-weight: 700; padding-left: 6pt; }
+table.d tr.sec td { font-weight: 800; font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: #0b5ea8; border-bottom: 0.6pt solid #111; padding-top: 6pt; }
+table.d th { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1pt solid #111; }
+.numbers .src { font-size: 7.6pt; margin-top: 5pt; }
+
+/* ---------- INBOX / X LISTS ---------- */
+.brief { font-size: 10.5pt; padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+.brief:last-child { border-bottom: none; }
+.brief b.h { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+.brief .src { margin-left: 4pt; }
+ul.x .src { display: block; margin-top: 1pt; }
+#expert .brief { break-inside: auto; orphans: 2; widows: 2; }
+.private { border: 0.8pt dashed #888; background: #fafaf7; padding: 7pt 11pt 2pt; }
+.private .flag { break-after: avoid; font-family: "Libre Franklin", Arial, sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 7pt; }
+ul.x { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; font-size: 10.5pt; }
+ul.x li { padding: 0 0 4pt; margin: 0 0 4pt; border-bottom: 0.5pt solid #e0e0e0; break-inside: avoid; }
+ul.x .handle { font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700; font-size: 10pt; }
+ul.x q { font-style: italic; }
+
+/* ---------- TRACKER / EVENTS / STUDY ---------- */
+.tracker td, .tracker th { font-size: 9.4pt; padding: 3pt 6pt 3pt 0; }
+.keep { }
+.tracker tr { break-inside: avoid; }
+.tracker h3, .keep h3 { break-after: avoid; }
+.tracker td:first-child { width: 1.25in; }
+.tracker td.n { width: 1.05in; }
+.verdict { background: #111; color: #fff; padding: 8pt 12pt; font-size: 10pt; line-height: 1.42; margin-top: 10pt; break-inside: avoid; }
+.verdict b { letter-spacing: .1em; text-transform: uppercase; font-size: 8.4pt; }
+table.ev { width: 100%; border-collapse: collapse; font-size: 9.8pt; line-height: 1.38; }
+table.ev td { border-bottom: 0.4pt solid #ddd; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+table.ev tr { break-inside: avoid; }
+table.ev td.dt { font-weight: 700; white-space: nowrap; width: 1.3in; }
+table.ev td.st { font-size: 8pt; padding-top: 3.4pt; white-space: nowrap; text-align: right; color: #666; padding-right: 0; }
+.study { border: 1pt solid #111; border-top: 4pt solid #111; padding: 8pt 13pt 2pt; }
+.study { font-size: 10.5pt; }
+.study ol { margin: 3pt 0 6pt; padding-left: 18pt; }
+.study li { margin-bottom: 3pt; break-inside: avoid; }
+.sub { margin-top: 10pt; border-top: 0.5pt solid #ccc; padding-top: 6pt; }
+.sub .kicker { color: #111; }
+ul.src { margin: 0; padding: 0; list-style: none; font-size: 7.9pt !important; columns: auto !important; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20pt; }
+ul.src li { margin-bottom: 2pt; break-inside: avoid; padding-left: 8pt; text-indent: -8pt; }
+ul.src li::before { content: "▸ "; color: #0b5ea8; }
+.foot { break-before: avoid; break-inside: avoid; margin-top: 10pt; border-top: 2pt solid #111; padding-top: 4pt; font-size: 7.2pt; color: #555; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4pt; }
+.foot span:not(:last-child)::after { content: "\00a0·"; }
+
+@media screen {
+  body { max-width: 800px; margin: 0 auto; padding: 16px 20px 40px; }
+}
+@media screen and (max-width: 640px) {
+  ul.src { grid-template-columns: 1fr; }
+  body { font-size: 16px; padding: 10px 14px 30px; }
+  .title { font-size: 30px; } h1.lead { font-size: 30px; } h2 { font-size: 23px; }
+  .ngrid, ul.x { grid-template-columns: 1fr; }
+  .story figure { float: none; width: auto; margin: 0 0 10px; } .story figure img { height: auto; }
+  .databar { grid-template-columns: 1fr; } .databar > div + div { border-left: none; padding-left: 0; border-top: 0.5pt solid #ccc; }
+  .topline, .foot { flex-direction: column; gap: 2px; }
+  table.ev td.st { display: none; }
+}
+</style>
+</head>
+<body class="wsj">
+
+<header>
+  <div class="topline"><span>Friday, November 27, 2026</span><span>Vol. I · No. 52 · DRAM · NAND · HBM · Tel Aviv edition</span><span>Data ~08:40 IST · Korea Fri close · US Wed close</span></div>
+  <div class="title">The Memory Cycle Journal</div>
+  <nav class="nav-sec"><a href="#lead">Lead story</a><a href="#numbers">Key Numbers</a><a href="#inbox">From the Inbox</a><a href="#x">On X</a><a href="#tracker">Cycle Tracker</a><a href="#events">Events</a></nav>
+  <div class="rule2"></div>
+<div class="nav"><a href="../index.html">Latest edition</a>·<a href="../archive.html">Archive</a>·<a href="../editions/2026-11-27.pdf">Print PDF</a></div>
+  <div class="databar">
+    <div><b>KOREA — FRIDAY CLOSE</b><span class="big">KOSPI 4,907.11</span>+4.16% · Samsung ₩178,800 (+4.38%) · SK hynix ₩1,107,000 (+5.13%) · foreign buying, stabilization-fund hopes · Naver, Seoul Economic Daily</div>
+    <div><b>US — WEDNESDAY CLOSE (LAST SESSION)</b><span class="big">Micron $601.25</span>−4.53% · Nvidia $149.30 (−3.91%) · SOX 8,774.86 (−0.65%) · US shut Thursday for Thanksgiving; Friday is a half day (close 20:00 IST) · StockAnalysis, Nasdaq</div>
+  </div>
+</header>
+
+
+<section id="lead">
+  <div class="sec-h">Lead story</div>
+  <div class="kicker">Contracts · Demand · Korea</div>
+  <h1 class="lead"><a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=282349" target="_blank" rel="noopener">Buyers Offer Prepayments and Fab Financing for Memory as Seoul’s Chip Stocks Rebound</a></h1>
+  <p class="deck">Citi says customers want binding contracts of up to five years and some pay 25–30% upfront. Musk reportedly offered to guarantee financing for a Samsung fab and was told everyone makes that offer. SK hynix and Samsung gained about 5% and 4% as foreign buyers came back.</p>
+  <div class="byline"><b>By the Memory Cycle Desk</b> · Tel Aviv · ~08:40 IST Friday (UTC+2) · Korea figures are Friday closes; US figures are Wednesday closes, the last full session · <span class="tag">Confirmed</span> unless marked</div>
+
+  
+  <aside class="numbers" id="numbers">
+    <div class="kicker">Key Numbers · markets · forecasts · spot</div>
+    <div class="ngrid">
+      <table class="d">
+        <tr class="sec"><td colspan="2">Korea, Friday close</td></tr>
+        <tr><td>KOSPI</td><td class="n">4,907.11 (+4.16%)</td></tr>
+        <tr><td>Samsung / SK hynix</td><td class="n">₩178,800 / ₩1,107,000</td></tr>
+        <tr class="sec"><td colspan="2">US, Wednesday close (last session)</td></tr>
+        <tr><td>Micron</td><td class="n">$601.25 (−4.53%)</td></tr>
+        <tr><td>SOX</td><td class="n">8,774.86 (−0.65%)</td></tr>
+        <tr><td>Kioxia (Thu, Tokyo)</td><td class="n">¥7,762 (+12.57%)</td></tr>
+      </table>
+      <table class="d">
+        <tr class="sec"><td colspan="2">Contracts and forecasts</td></tr>
+        <tr><td>LTA upfront (Citi)</td><td class="n">25–30%</td></tr>
+        <tr><td>Goldman DRAM demand ’27/’28</td><td class="n">+24% / +17%</td></tr>
+        <tr><td>BofA ’28 DRAM margin floor</td><td class="n">50–60%</td></tr>
+        <tr class="sec"><td colspan="2">Spot (TrendForce, Fri 11:00 GMT+8)</td></tr>
+        <tr><td>DDR5 16Gb</td><td class="n">$60.767 (0.00%)</td></tr>
+        <tr><td>DDR4 16Gb</td><td class="n">$77.375 (−0.16%)</td></tr>
+      </table>
+    </div>
+    <div class="src">What this shows: Korea closes from Naver Finance. US closes are Wednesday’s (StockAnalysis, Nasdaq data); US markets were shut Thursday and trade a half day Friday. Kioxia from Nikkei via Startup Fortune. Citi from the WSJ via Businesskorea; Goldman as reported by Longbridge/Wallstreetcn and BigGo (Nov 23 report); BofA as quoted by @pequityresearch (single source). Spot prices are TrendForce’s Friday morning session.</div>
+  </aside>
+
+  <p>The buyers’ side of the shortage came into view. Peter Lee, Citigroup’s semiconductor analyst, said suppliers and customers increasingly want binding long-term contracts of up to five years; customers are paying 25% to 30% of the purchase price upfront, and some are sharing the cost of new fabs, the Wall Street Journal reported (via Businesskorea). The Journal also relayed an account from Capital Group’s Carl Kawaja: Elon Musk offered Samsung a long-term purchase deal and then a financing guarantee for a new fab, and both times Chairman Lee Jae-yong replied that everyone else was making the same offer. <span class="tag">Reported</span> That answers Wednesday’s doubts (Yonhap Infomax) about how binding the LTAs are.</p>
+  <p>Demand forecasts are still rising even as price forecasts come down. Goldman’s Nov 23 model, recirculated on X overnight, lifts industry DRAM demand growth to +33%/+24%/+17% for 2026–28 (from +28%/+20%/+19%), with server DRAM excluding HBM +32% in 2027 and SOCAMM +75%. It also raises supply growth to +29%/+23%/+22%, so the shortage narrows to 1.2% in 2028; that is the basis for its price cuts (Longbridge, BigGo). BofA argues that even a 40–50% fall in 2028 prices would leave DRAM operating margins at 50–60%, against 80%+ now, because of HBM and LTAs (as quoted by @pequityresearch; <span class="tag">Single source</span>).</p>
+  <p>Seoul traded the news. The KOSPI opened lower, then rallied to close at 4,907.11 (+4.16%) as foreign investors bought and the market priced an expanded stabilization fund (Seoul Economic Daily, Edaily). SK hynix closed at ₩1,107,000 (+5.13%) and Samsung at ₩178,800 (+4.38%) on the day Samsung pays out about ₩30 trillion of dividends (Edaily). In Tokyo on Thursday, Kioxia hit its 14.5% daily limit and closed at ¥7,762 (+12.57%) after its holding company disclosed a ¥2.21 trillion dividend from its operating unit, which Citi said makes a buyback possible this year (Startup Fortune, Bloomberg).</p>
+  <p><b>Our call:</b> late upcycle; tight through 2027 in servers and HBM, unchanged overall. Contract terms and demand look firmer today, but the 2027 price path is flatter (see On X), and stranded GPUs in Southeast Asia are the near-term risk to spot. <span class="tag inv">Cycle signal: contracts firmer, price path flatter</span></p>
+
+  <article class="story">
+    <div class="kicker">Export controls · Servers · Spot risk</div>
+    <h2><a href="https://www.investing.com/news/stock-market-news/nvidia-halts-server-shipments-to-four-southeast-asian-countries-ft-reports-5052112" target="_blank" rel="noopener">Nvidia Halts Server Shipments to Four Southeast Asian Countries</a></h2>
+    <p>Nvidia told Dell, Supermicro and other partners to stop shipping servers with its chips to Malaysia, Singapore, Thailand and Indonesia, the Financial Times and the Wall Street Journal reported. The duration is unclear. It follows a Commerce rule, effective Nov 19, that requires licences for advanced chips there (Reuters via Investing.com, TechTimes). <span class="tag">Reported</span> For memory, the question is whether stranded capacity is absorbed or dumped. Goldman puts China-linked AI capacity at 0.5–0.75 GW, or 263,000–395,000 GPUs, that must find licences or new tenants within 90 days (via @pequityresearch; <span class="tag">Single source</span>). A Jefferies note says the first estimate cuts in the Asian server chain (Quanta, Compal, Supermicro) are “not impossible” by fourth-quarter results, adding pressure on memory spot prices. B300 lead times are 26–40 weeks (Commercial Times via Newspim), so US demand is still ahead of supply.</p>
+  </article>
+
+  <article class="story">
+    <div class="kicker">Micron · Taiwan · Labor</div>
+    <h2><a href="https://www.ctee.com.tw/news/20261126702103-431401" target="_blank" rel="noopener">Micron’s Taoyuan Mediation Makes Progress; Union to Table Its Own Plan Dec 2</a></h2>
+    <p>Thursday’s second mediation between Micron and its Taoyuan union ended without a deal but with progress, the Taoyuan labor bureau said: the union will give the company its own proposal on Dec 2, and a third mediation is set for 09:00 Taiwan time on Dec 4 (Commercial Times). The union says the dispute is now about a peace clause, not pay (UURL). The reported threat to NT$1.6 trillion of Micron investment remains <span class="tag">Unconfirmed</span>. Taiwan makes more than 60% of Micron’s DRAM (Digital Times). Talks continuing lowers the near-term disruption risk.</p>
+  </article>
+
+  <article class="story">
+    <div class="kicker">HBM · Flash · Technology</div>
+    <h2><a href="https://www.trendforce.com/news/2026/11/25/breaking-samsung-grapples-with-hbm-base-die-crunch-as-internal-wafer-demand-seen-doubling-to-30k-per-month-in-2027/" target="_blank" rel="noopener">Samsung Faces an HBM Base-Die Crunch as Kioxia Pitches Flash as GPU Memory</a></h2>
+    <p>Samsung’s memory division expects its need for HBM base-die wafers to double in 2027 to about 30,000 4nm-equivalent wafers a month, so Samsung plans to add base-die lines at Giheung, Pyeongtaek P5 and Taylor P2, TrendForce reported, citing industry sources. <span class="tag">Reported</span> Kioxia showed XL-FLASH Gen 3: 3µs average reads, under a tenth of its BiCS8 TLC, and 70% higher bit density, with samples in March 2027. In a proof of concept with Nvidia 144 Kioxia SSDs gave a GB200 NVL72 rack about 60TB of flash “extended memory” per node; no latency figures were given (Kioxia). Huawei will present its own HBM design at ISSCC, with a 4,096-bit interface and hybrid bonding (TrendForce), a possible route around China’s EUV limits.</p>
+  </article>
+
+</section>
+
+
+<section id="inbox">
+  <div class="sec-h">From the Inbox <span>· Since Thu ~08:35 IST · Read-only</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">The growth peak is now.</b> Global semiconductor revenue growth hit a record 135% y/y in July, mostly from memory pricing. If DRAM is flat, base effects put the peak in growth around November. The trough comes in 1H28 at the earliest, so a re-rating would start in 2H27. Semicap re-rates first, as cuts land. <span class="src">Jefferies Global Semis Daily (Nov 26)</span></div>
+  <div class="brief"><span class="tag inv">New</span> <b class="h">Chips outrun power.</b> Korea’s chip exports hit a record $38.5bn in Nov 1–20 (+294% y/y). Jefferies’ bottom-up model implies data-center power demand rising from 11 GW (2025) to 90 GW (2028), about double planned capacity. The SOX is down 43% from June. <span class="src">Leader Capital Markets, summarizing Jefferies (Nov 26)</span></div>
+</section>
+
+
+
+
+<section id="x">
+  <div class="sec-h">On X <span>· Since Thu ~08:35 · IST</span></div>
+  <ul class="x">
+    <li><span class="handle">@jukan05</span> · Nov 26 11:28<br><span class="tag">Unconfirmed</span> DRAM contract outlook for 1Q–4Q27 revised to +6%/+3%/0%/0% q/q from +10%/+7%/+5%/+3%; the post does not name the source.<a class="src" href="https://x.com/jukan05/status/2125884511359807765">x.com/…/2125884511359807765</a></li>
+    <li><span class="handle">@pequityresearch</span> · Nov 27 05:27<br>BofA: DRAM operating margin of 80%+ falls only to 50–60% even with 40–50% lower prices in 2028, thanks to HBM and LTAs.<a class="src" href="https://x.com/pequityresearch/status/2126155803321127384">x.com/…/2126155803321127384</a></li>
+    <li><span class="handle">@pequityresearch</span> · Nov 27 01:28<br>Goldman: industry DRAM demand +33%/+24%/+17% for 2026–28, up from +28%/+20%/+19%.<a class="src" href="https://x.com/pequityresearch/status/2126095657186595220">x.com/…/2126095657186595220</a></li>
+    <li><span class="handle">@jukan05</span> · Nov 26 12:56<br><span class="tag">Reported</span> Musk offered Samsung a long-term deal, then a fab financing guarantee; Lee: “We get that offer from everyone.”<a class="src" href="https://x.com/jukan05/status/2125906535151006041">x.com/…/2125906535151006041</a></li>
+    <li><span class="handle">@jukan05</span> · Nov 27 05:45<br><span class="tag">Opinion</span> Reads Huawei’s ISSCC HBM as a way around EUV: HBM4-class bandwidth per stack at HBM3-class pin speeds, outside JEDEC.<a class="src" href="https://x.com/jukan05/status/2126160576342901213">x.com/…/2126160576342901213</a></li>
+    <li><span class="handle">@dnystedt</span> · Nov 27 03:03<br>Formosa Sumco says its 8- and 12-inch wafer lines are fully loaded; HBM, wafer stacking and CoWoS interposers lift 12-inch demand (media report).<a class="src" href="https://x.com/dnystedt/status/2126119629642961301">x.com/…/2126119629642961301</a></li>
+  </ul>
+</section>
+
+
+<section id="tracker">
+  <div class="sec-h">Cycle Tracker <span>· Contracts firmer, 2027 price path flatter</span></div>
+  <div class="keep">
+  <table class="d tracker">
+    <tr><th>Gauge</th><th>Today vs Nov 26 (KPI watch list)</th><th style="text-align:right">Nudge</th></tr>
+    <tr><td><b>Contract ROC</b></td><td>Unconfirmed revised path: DRAM +6%/+3%/0%/0% q/q through 2027 (was +10/+7/+5/+3). Month-end contracts Nov 30</td><td class="n">Softer (unconfirmed)</td></tr>
+    <tr><td><b>Spot vs contract</b></td><td>DDR5 16Gb flat at $60.767; DDR4 16Gb −0.16%. Stranded SE Asian GPUs are the risk</td><td class="n">Flat, at risk</td></tr>
+    <tr><td><b>Contracts / LTAs</b></td><td>Citi: binding contracts of up to five years, 25–30% upfront, fab cost sharing; Musk’s fab offer reportedly not enough</td><td class="n">Firmer</td></tr>
+    <tr><td><b>Lead times / capex / HBM</b></td><td>B300 lead times 26–40 weeks; Samsung base-die need doubles to ~30k wpm; wafer lines full (Formosa Sumco). Micron talks progressing</td><td class="n">Server tight</td></tr>
+    <tr><td><b>Valuation / guidance</b></td><td>KOSPI +4.16%, SK hynix +5.13%; BofA 50–60% margin floor in 2028; Jefferies: growth peak now, trough 1H28 at the earliest. MU still $601.25</td><td class="n">Rebound, peak debate</td></tr>
+  </table>
+  </div>
+  <div class="verdict"><b>Verdict vs previous call (No. 51, Nov 26)</b><br>Late upcycle; tight through 2027 in servers and HBM, unchanged overall. Contracts and demand are firmer (five-year deals with 25–30% prepaid per Citi, Goldman demand up, BofA margin floor). On the other side, the 2027 contract path looks flatter (unconfirmed +6/+3/0/0), NAND stays loose, and Nvidia’s Southeast Asia halt could push GPUs and memory onto the spot market. 2028 is still open and leaning softer.</div>
+</section>
+
+
+<section id="events">
+  <div class="sec-h">Events Calendar <span>· Nov 27–Dec 17 · Israel time (IST, UTC+2) · US cash open 16:30</span></div>
+  <table class="ev">
+    <tr><td class="dt">Nov 27–Dec 1</td><td>US half day, close 20:00 (27th) · month-end contract prices (~30th) · AWS re:Invent (Nov 30–Dec 4) · Korea exports, Nvidia GTC DC, Marvell FQ3 (Dec 1)</td><td class="st">Contracts</td></tr>
+    <tr><td class="dt">Dec 2–4</td><td>Micron union proposal (2nd) · Huang Senate hearing 17:00, WSTS forecast (3rd) · Micron third mediation, SK hynix–Kioxia conversion (~4th)</td><td class="st">Supply</td></tr>
+    <tr><td class="dt">Dec 7–17</td><td>DRAM antitrust answers (7th) · Fed 21:00, Broadcom FQ4, SEMICON Japan (9th) · US CPI, TSMC sales (10th) · Micron FQ1, call 23:30 (17th)</td><td class="st">Policy</td></tr>
+  </table>
+</section>
+<div class="sub"><div class="kicker">Sources &amp; further reading</div><ul class="src" style="columns:2;font-size:12px"><li><a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=282349" target="_blank" rel="noopener">Businesskorea: Samsung&#x27;s Lee presses Musk for more in memory chip supply talks (WSJ, Citi) (Nov 27)</a></li><li><a href="https://www.hankyung.com/article/2026112634217" target="_blank" rel="noopener">Hankyung (Korean): Musk&#x27;s offer to Samsung (Nov 26)</a></li><li><a href="https://longbridge.com/en/news/306460846" target="_blank" rel="noopener">Longbridge/Wallstreetcn: Goldman cuts 2028 memory price targets, raises DRAM demand (Nov 23)</a></li><li><a href="https://finance.biggo.com/news/cc39f504-e7dd-4f74-aa27-ea1a456f73a0" target="_blank" rel="noopener">BigGo Finance: Goldman supply-demand model detail (Nov 23)</a></li><li><a href="https://en.sedaily.com/market/2026/11/27/foreign-buyers-return-as-kospi-jumps-3-percent-kosdaq" target="_blank" rel="noopener">Seoul Economic Daily: Foreign buyers return as KOSPI jumps (Nov 27)</a></li><li><a href="https://en.edaily.co.kr/news/eda202611275249/" target="_blank" rel="noopener">Edaily: KOSDAQ recovers 700 on stabilization-fund hopes, KOSPI surges (Nov 27)</a></li><li><a href="https://www.yna.co.kr/view/AKR20261127090700008" target="_blank" rel="noopener">Yonhap (Korean): KOSPI tries to retake 4,900 (Nov 27)</a></li><li><a href="https://m.stock.naver.com/domestic/index/KOSPI/total" target="_blank" rel="noopener">Naver Finance: KOSPI, Samsung Electronics, SK hynix</a></li><li><a href="https://stockanalysis.com/stocks/mu/history/" target="_blank" rel="noopener">StockAnalysis: Micron price history (Nov 25 close)</a></li><li><a href="https://startupfortune.com/kioxia-stock-hit-its-daily-limit-before-the-nvidia-memory-news-came-out/" target="_blank" rel="noopener">Startup Fortune: Kioxia hit its daily limit before the Nvidia memory news (Nov 26)</a></li><li><a href="https://www.bloomberg.com/jp/news/articles/2026-11-26/TP34KVT9NJLS00" target="_blank" rel="noopener">Bloomberg (Japanese): Kioxia HD buyback seen after ¥2.2tn dividend (Nov 26)</a></li><li><a href="https://www.investing.com/news/stock-market-news/nvidia-halts-server-shipments-to-four-southeast-asian-countries-ft-reports-5052112" target="_blank" rel="noopener">Reuters via Investing.com: Nvidia halts server shipments to four Southeast Asian countries (Nov 26)</a></li><li><a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank" rel="noopener">TechCrunch: Nvidia hits pause on chip shipments to Southeast Asia (Nov 26)</a></li><li><a href="https://www.techtimes.com/articles/331670/20261127/nvidia-reportedly-tells-dell-super-micro-stop-server-shipments-southeast-asia.htm" target="_blank" rel="noopener">TechTimes: Nvidia tells Dell and Super Micro to stop Southeast Asia shipments (Nov 27)</a></li><li><a href="https://www.engadget.com/2329200/nvidia-reportedly-halts-chip-shipments-to-southeast-asia/" target="_blank" rel="noopener">Engadget: Nvidia reportedly halts AI chip shipments to Southeast Asia</a></li><li><a href="https://ir.newspim.com/news/view/20261127000435" target="_blank" rel="noopener">Newspim (Korean): Memory peak debate returns; demand firm, infrastructure the bottleneck (Nov 27)</a></li><li><a href="https://www.ctee.com.tw/news/20261126702103-431401" target="_blank" rel="noopener">Commercial Times (Chinese): Micron labor dispute progresses; union proposal Dec 2, third mediation (Nov 26)</a></li><li><a href="https://news.uurl.ws/en/industry/micron-taoyuan-union-response-557000003.html" target="_blank" rel="noopener">UURL: Micron Taoyuan union slams &#x27;peace agreement&#x27; (Nov 26)</a></li><li><a href="https://www.dt.co.kr/article/12097291" target="_blank" rel="noopener">Digital Times (Korean): Micron labor dispute drags on (Nov 25)</a></li><li><a href="https://www.trendforce.com/news/2026/11/25/breaking-samsung-grapples-with-hbm-base-die-crunch-as-internal-wafer-demand-seen-doubling-to-30k-per-month-in-2027/" target="_blank" rel="noopener">TrendForce: Samsung grapples with HBM base die crunch (Nov 25)</a></li><li><a href="https://www.trendforce.com/news/2026/11/26/news-huawei-reportedly-set-to-unveil-custom-hbm-architecture-with-twice-hbm4s-interface-width-and-hybrid-bonding/" target="_blank" rel="noopener">TrendForce: Huawei reportedly set to unveil custom HBM architecture (Nov 26)</a></li><li><a href="https://www.kioxia.com/en-jp/business/news/2026/20261125-1.html" target="_blank" rel="noopener">Kioxia: XL-FLASH Generation 3 (Nov 25)</a></li><li><a href="https://www.kioxia.com/en-jp/business/news/2026/20261126-2.html" target="_blank" rel="noopener">Kioxia: GP2 Series SSD for GPU memory expansion (Nov 26)</a></li><li><a href="https://www.trendforce.com/news/2026/11/26/news-trumps-proposed-tariffs-chip-giants-largely-spared-but-korean-memory-and-testing-tools-face-lingering-risks/" target="_blank" rel="noopener">TrendForce: Trump&#x27;s proposed tariffs — Korean memory risks (Nov 26)</a></li><li><a href="https://www.trendforce.com/price/dram/dram_spot" target="_blank" rel="noopener">TrendForce DRAM spot (Nov 27 morning session)</a></li></ul></div>
+<div class="foot"><span>The Memory Cycle Journal · independent research digest · not investment advice</span><span>Unconfirmed reports are labeled as such. Figures are only those cited from named sources.</span><span>Edition #52 · Nov 27, 2026</span></div>
+</body>
+</html>
